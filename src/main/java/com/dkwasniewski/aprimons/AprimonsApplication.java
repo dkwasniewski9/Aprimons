@@ -2,6 +2,7 @@ package com.dkwasniewski.aprimons;
 
 import com.dkwasniewski.aprimons.repository.PokeballRepository;
 import com.dkwasniewski.aprimons.repository.PokemonRepository;
+import com.dkwasniewski.aprimons.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +16,8 @@ public class AprimonsApplication {
     PokemonRepository pokemonRepository;
     @Autowired
     PokeballRepository pokeballRepository;
+    @Autowired
+    UserRepository userRepository;
     public static void main(String[] args) {
         SpringApplication.run(AprimonsApplication.class, args);
     }

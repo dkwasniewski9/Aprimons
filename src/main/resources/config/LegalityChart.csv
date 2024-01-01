@@ -1,0 +1,473 @@
+DEX,Name,Image,Hidden Ability,Safari,Sport,Fast,Friend,Heavy,Level,Love,Lure,Moon,Dream,Beast,SwSh,BDSP,SV
+1,Bulbasaur,0001_n.png,Chlorophyll,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+4,Charmander,0004_n.png,Solar Power,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+7,Squirtle,0007_n.png,Rain Dish,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+10,Caterpie,0010_n.png,Run Away,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+13,Weedle,0013_n.png,Run Away,False,True,True,True,True,True,True,True,True,True,True,False,True,False
+16,Pidgey,0016_n.png,Big Pecks,True,False,True,True,True,True,True,True,True,True,True,False,True,False
+19,Rattata,0019_n.png,Hustle,True,False,True,True,True,True,True,True,True,True,True,False,True,False
+19,Alolan Rattata,0019_001_n.png,Thick Fat,True,False,True,True,True,True,True,True,True,True,True,False,False,False
+21,Spearow,0021_n.png,Sniper,True,False,True,True,True,True,True,True,True,True,True,False,True,False
+23,Ekans,0023_n.png,Unnerve,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+27,Sandshrew,0027_n.png,Sand Rush,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+27,Alolan Sandshrew,0027_001_n.png,Slush Rush,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+29,Nidoran ♀,0029_001_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+32,Nidoran ♂,0032_001_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+37,Vulpix,0037_n.png,Drought,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+37,Alolan Vulpix,0037_001_n.png,Snow Warning,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+41,Zubat,0041_n.png,Infiltrator,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+43,Oddish,0043_n.png,Run Away,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+46,Paras,0046_n.png,Damp,True,True,True,True,True,True,True,True,True,True,True,False,True,False
+48,Venonat,0048_n.png,Run Away,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+50,Diglett,0050_n.png,Sand Force,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+50,Alolan Diglett,0050_001_n.png,Sand Force,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+52,Meowth,0052_n.png,Unnerve,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+52,Alolan Meowth,0052_001_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+52,Galarian Meowth,0052_002_n.png,Unnerve,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+54,Psyduck,0054_n.png,Swift Swim,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+56,Mankey,0056_n.png,Defiant,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+58,Growlithe,0058_n.png,Justified,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+58,Hisuian Growlithe,0058_001_n.png,Rock Head,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+60,Poliwag,0060_n.png,Swift Swim,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+63,Abra,0063_n.png,Magic Guard,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+66,Machop,0066_n.png,Steadfast,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+69,Bellsprout,0069_n.png,Gluttony,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+72,Tentacool,0072_n.png,Rain Dish,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+74,Geodude,0074_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+74,Alolan Geodude,0074_001_n.png,Galvanize,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+77,Ponyta,0077_n.png,Flame Body,True,True,True,True,True,True,True,True,True,True,True,False,True,False
+77,Galarian Ponyta,0077_001_n.png,Anticipation,True,True,True,True,True,True,True,True,True,True,True,False,True,False
+79,Slowpoke,0079_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+79,Galarian Slowpoke,0079_001_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+81,Magnemite,0081_n.png,Analytic,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+83,Farfetch'd,0083_n.png,Defiant,True,True,True,True,True,True,True,True,True,True,True,False,True,False
+83,Galarian Farfetch'd,0083_001_n.png,Scrappy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+84,Doduo,0084_n.png,Tangled Feet,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+86,Seel,0086_n.png,Ice Body,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+88,Grimer,0088_n.png,Poison Touch,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+88,Alolan Grimer,0088_001_n.png,Power of Alchemy,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+90,Shellder,0090_n.png,Overcoat,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+92,Gastly,0092_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+95,Onix,0095_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+96,Drowzee,0096_n.png,Inner Focus,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+98,Krabby,0098_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+100,Voltorb,0100_n.png,Aftermath,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+100,Hisuian Voltorb,0100_001_n.png,Aftermath,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+102,Exeggcute,0102_n.png,Harvest,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+104,Cubone,0104_n.png,Battle Armor,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+108,Lickitung,0108_n.png,Cloud Nine,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+109,Koffing,0109_n.png,Stench,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+111,Rhyhorn,0111_n.png,Reckless,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+114,Tangela,0114_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+115,Kangaskhan,0115_n.png,Inner Focus,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+116,Horsea,0116_n.png,Damp,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+118,Goldeen,0118_n.png,Lightning Rod,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+120,Staryu,0120_n.png,Analytic,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+122,Mr. Mime,0122_001_n.png,Technician,True,True,True,True,True,True,True,True,True,True,True,False,True,False
+122,Galarian Mr. Mime,0122_n.png,Ice Body,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+123,Scyther,0123_n.png,Steadfast,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+127,Pinsir,0127_n.png,Moxie,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+128,Tauros,0128_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+128,Paldean Tauros,0128_001_n.png,Cud Chew,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+128,Paldean Tauros Blaze,0128_n.png,Cud Chew,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+128,Paldean Tauros Aqua,0128_n.png,Cud Chew,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+129,Magikarp,0129_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+131,Lapras,0131_n.png,Hydration,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+133,Eevee,0133_n.png,Anticipation,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+137,Porygon,0137_n.png,Analytic,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+138,Omanyte,0138_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+140,Kabuto,0140_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+142,Aerodactyl,0142_n.png,Unnerve,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+147,Dratini,0147_n.png,Marvel Scale,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+152,Chikorita,0152_n.png,Leaf Guard,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+155,Cyndaquil,0155_n.png,Flash Fire,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+158,Totodile,0158_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+161,Sentret,0161_n.png,Frisk,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+163,Hoothoot,0163_n.png,Tinted Lens,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+165,Ledyba,0165_n.png,Rattled,True,False,True,True,True,True,True,True,True,True,True,False,True,False
+167,Spinarak,0167_n.png,Sniper,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+170,Chinchou,0170_n.png,Water Absorb,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+172,Pichu,0172_n.png,Lightning Rod,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+173,Cleffa,0173_n.png,Friend Guard,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+174,Igglybuff,0174_n.png,Friend Guard,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+175,Togepi,0175_n.png,Super Luck,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+177,Natu,0177_n.png,Magic Bounce,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+179,Mareep,0179_n.png,Plus,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+187,Hoppip,0187_n.png,Infiltrator,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+190,Aipom,0190_n.png,Skill Link,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+191,Sunkern,0191_n.png,Early Bird,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+193,Yanma,0193_n.png,Frisk,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+194,Wooper,0194_n.png,Unaware,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+194,Paldean Wooper,0194_001_n.png,Unaware,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+198,Murkrow,0198_n.png,Prankster,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+200,Misdreavus,0200_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+203,Girafarig,0203_n.png,Sap Sipper,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+204,Pineco,0204_n.png,Overcoat,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+206,Dunsparce,0206_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+207,Gligar,0207_n.png,Immunity,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+209,Snubbull,0209_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+211,Qwilfish,0211_n.png,Intimidate,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+211,Hisuian Qwilfish,0211_001_n.png,Intimidate,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+213,Shuckle,0213_n.png,Contrary,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+214,Heracross,0214_n.png,Moxie,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+215,Sneasel,0215_n.png,Pickpocket,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+215,Hisuian Sneasel,0215_001_n.png,Pickpocket,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+216,Teddiursa,0216_n.png,Honey Gather,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+218,Slugma,0218_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+220,Swinub,0220_n.png,Thick Fat,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+222,Corsola,0222_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,False,True,False
+222,Galarian Corsola,0222_001_n.png,Cursed Body,True,True,True,True,True,True,True,True,True,True,True,False,False,False
+223,Remoraid,0223_n.png,Moody,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+225,Delibird,0225_n.png,Insomnia,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+227,Skarmory,0227_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+228,Houndour,0228_n.png,Unnerve,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+231,Phanpy,0231_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+234,Stantler,0234_n.png,Sap Sipper,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+235,Smeargle,0235_n.png,Moody,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+236,Tyrogue,0236_n.png,Vital Spirit,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+238,Smoochum,0238_n.png,Hydration,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+239,Elekid,0239_n.png,Vital Spirit,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+240,Magby,0240_n.png,Vital Spirit,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+241,Miltank,0241_n.png,Sap Sipper,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+246,Larvitar,0246_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+252,Treecko,0252_n.png,Unburden,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+255,Torchic,0255_n.png,Speed Boost,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+258,Mudkip,0258_n.png,Damp,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+261,Poochyena,0261_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+263,Zigzagoon,0263_n.png,Quick Feet,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+263,Galarian Zigzagoon,0263_001_n.png,Quick Feet,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+265,Wurmple,0265_n.png,Run Away,False,True,True,True,True,True,True,True,True,True,False,False,True,False
+270,Lotad,0270_n.png,Own Tempo,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+273,Seedot,0273_n.png,Pickpocket,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+276,Taillow,0276_n.png,Scrappy,False,False,True,True,True,True,True,True,True,True,True,False,True,False
+278,Wingull,0278_n.png,Rain Dish,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+280,Ralts,0280_n.png,Telepathy,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+283,Surskit,0283_n.png,Rain Dish,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+285,Shroomish,0285_n.png,Quick Feet,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+287,Slakoth,0287_n.png,Truant,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+290,Nincada,0290_n.png,Run Away,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+293,Whismur,0293_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+296,Makuhita,0296_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+298,Azurill,0298_n.png,Sap Sipper,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+299,Nosepass,0299_n.png,Sand Force,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+300,Skitty,0300_n.png,Wonder Skin,False,False,True,True,True,True,True,True,True,True,False,False,True,False
+302,Sableye,0302_n.png,Prankster,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+303,Mawile,0303_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+304,Aron,0304_n.png,Heavy Metal,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+307,Meditite,0307_n.png,Telepathy,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+309,Electrike,0309_n.png,Minus,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+311,Plusle,0311_n.png,Lightning Rod,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+312,Minun,0312_n.png,Volt Absorb,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+313,Volbeat,0313_n.png,Prankster,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+314,Illumise,0314_n.png,Prankster,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+316,Gulpin,0316_n.png,Gluttony,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+318,Carvanha,0318_n.png,Speed Boost,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+320,Wailmer,0320_n.png,Pressure,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+322,Numel,0322_n.png,Own Tempo,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+324,Torkoal,0324_n.png,Shell Armor,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+325,Spoink,0325_n.png,Gluttony,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+327,Spinda,0327_n.png,Contrary,True,False,True,True,True,True,True,True,True,True,True,False,True,False
+328,Trapinch,0328_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+331,Cacnea,0331_n.png,Water Absorb,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+333,Swablu,0333_n.png,Cloud Nine,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+335,Zangoose,0335_n.png,Toxic Boost,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+336,Seviper,0336_n.png,Inflitrator,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+337,Lunatone,0337_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,False,True,False
+338,Solrock,0338_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+339,Barboach,0339_n.png,Hydration,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+341,Corphish,0341_n.png,Adaptability,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+343,Baltoy,0343_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+345,Lileep,0345_n.png,Storm Drain,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+347,Anorith,0347_n.png,Swift Swim,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+349,Feebas,0349_n.png,Adaptability,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+351,Castform,0351_n.png,Forecast,False,False,True,True,True,True,True,True,True,True,True,False,True,False
+352,Kecleon,0352_n.png,Protean,True,False,True,True,True,True,True,True,True,True,True,False,True,False
+353,Shuppet,0353_n.png,Cursed Body,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+355,Duskull,0355_n.png,Frisk,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+357,Tropius,0357_n.png,Harvest,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+359,Absol,0359_n.png,Justified,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+360,Wynaut,0360_n.png,Telepathy,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+361,Snorunt,0361_n.png,Moody,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+363,Spheal,0363_n.png,Oblivious,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+366,Clamperl,0366_n.png,Rattled,False,False,True,True,True,True,True,True,True,True,True,False,True,False
+369,Relicanth,0369_n.png,Sturdy,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+370,Luvdisc,0370_n.png,Hydration,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+371,Bagon,0371_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+374,Beldum,0374_n.png,Light Metal,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+387,Turtwig,0387_n.png,Shell Armor,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+390,Chimchar,0390_n.png,Iron Fist,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+393,Piplup,0393_n.png,Defiant / Competitive,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+396,Starly,0396_n.png,Reckless,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+399,Bidoof,0399_n.png,Moody,True,False,True,True,True,True,True,True,True,True,False,False,True,False
+401,Kricketot,0401_n.png,Run Away,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+403,Shinx,0403_n.png,Guts,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+406,Budew,0406_n.png,Leaf Guard,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+408,Cranidos,0408_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+410,Shieldon,0410_n.png,Soundproof,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+412,Burmy Plant,0412_001_n.png,Overcoat,False,False,True,True,True,True,True,True,True,True,False,False,True,False
+412,Burmy Sandy,0412_001_n.png,Overcoat,False,False,True,True,True,True,True,True,True,True,False,False,True,False
+412,Burmy Trash,0412_001_n.png,Overcoat,False,False,True,True,True,True,True,True,True,True,False,False,True,False
+415,Combee,0415_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+417,Pachirisu,0417_n.png,Volt Absorb,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+418,Buizel,0418_n.png,Water Veil,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+420,Cherubi,0420_n.png,Chlorophyll,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+422,Shellos West,0422_001_n.png,Sand Force,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+422,Shellos East,0422_001_n.png,Sand Force,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+425,Drifloon,0425_n.png,Flare Boost,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+427,Buneary,0427_n.png,Limber,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+431,Glameow,0431_n.png,Keen Eye,False,False,True,True,True,True,True,True,True,True,False,False,True,False
+433,Chingling,0433_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+434,Stunky,0434_n.png,Keen Eye,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+436,Bronzor,0436_n.png,Heavy Metal,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+438,Bonsly,0438_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+440,Happiny,0440_n.png,Healer,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+441,Chatot,0441_n.png,Big Pecks,False,False,True,True,True,True,True,True,True,True,False,False,True,False
+442,Spiritomb,0442_n.png,Infiltrator,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+443,Gible,0443_n.png,Rough Skin,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+446,Munchlax,0446_n.png,Gluttony,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+447,Riolu,0447_n.png,Prankster,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+449,Hippopotas,0449_n.png,Sand Force,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+451,Skorupi,0451_n.png,Keen Eye,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+453,Croagunk,0453_n.png,Poison Touch,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+455,Carnivine,0455_n.png,Levitate,True,False,True,True,True,True,True,True,True,True,False,False,False,False
+456,Finneon,0456_n.png,Water Veil,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+458,Mantyke,0458_n.png,Water Veil,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+459,Snover,0459_n.png,Soundproof,True,True,True,True,True,True,True,True,True,True,True,True,True,True
+479,Rotom,0479_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,False,True,True
+495,Snivy,0495_n.png,Contrary,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+498,Tepig,0498_n.png,Thick Fat,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+501,Oshawott,0501_n.png,Shell Armor,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+504,Patrat,0504_n.png,Analytic,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+506,Lillipup,0506_n.png,Run Away,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+509,Purrloin,0509_n.png,Prankster,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+511,Pansage,0511_n.png,Overgrow,False,False,False,False,False,False,False,False,False,True,False,False,False,False
+513,Pansear,0513_n.png,Blaze,False,False,False,False,False,False,False,False,False,True,False,False,False,False
+515,Panpour,0515_n.png,Torrent,False,False,False,False,False,False,False,False,False,True,False,False,False,False
+517,Munna,0517_n.png,Telepathy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+519,Pidove,0519_n.png,Rivalry,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+522,Blitzle,0522_n.png,Sap Sipper,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+524,Roggenrola,0524_n.png,Sand Force,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+527,Woobat,0527_n.png,Simple,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+529,Drilbur,0529_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+531,Audino,0531_n.png,Klutz,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+532,Timburr,0532_n.png,Iron Fist,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+535,Tympole,0535_n.png,Water Absorb,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+538,Throh,0538_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,False,False,False
+539,Sawk,0539_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+540,Sewaddle,0540_n.png,Overcoat,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+543,Venipede,0543_n.png,Speed Boost,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+546,Cottonee,0546_n.png,Chlorophyll,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+548,Petilil,0548_n.png,Leaf Guard,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+550,Basculin Red,0550_001_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+550,Basculin Blue,0550_001_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+550,Basculin White,0550_001_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,False,False,False
+551,Sandile,0551_n.png,Anger Point,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+554,Darumaka,0554_n.png,Inner Focus,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+554,Galarian Darumaka,0554_001_n.png,Inner Focus,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+556,Maractus,0556_n.png,Storm Drain,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+557,Dwebble,0557_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+559,Scraggy,0559_n.png,Intimidate,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+561,Sigilyph,0561_n.png,Tinted Lens,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+562,Yamask,0562_n.png,Mummy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+562,Galarian Yamask,0562_001_n.png,Wandering Spirit,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+564,Tirtouga,0564_n.png,Swift Swim,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+566,Archen,0566_n.png,Defeatist,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+568,Trubbish,0568_n.png,Aftermath,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+570,Zorua,0570_n.png,Illusion,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+570,Hisuian Zorua,0570_001_n.png,Illusion,True,True,True,True,True,True,True,True,True,True,True,False,False,False
+572,Minccino,0572_n.png,Skill Link,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+574,Gothita,0574_n.png,Shadow Tag,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+577,Solosis,0577_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+580,Ducklett,0580_n.png,Hydration,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+582,Vanillite,0582_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+585,Deerling Spring,0585_001_n.png,Serene Grace,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+585,Deerling Summer,0585_001_n.png,Serene Grace,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+585,Deerling Autumn,0585_001_n.png,Serene Grace,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+585,Deerling Winter,0585_001_n.png,Serene Grace,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+587,Emolga,0587_n.png,Motor Drive,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+588,Karrablast,0588_n.png,No Guard,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+590,Foongus,0590_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+592,Frillish,0592_n.png,Damp,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+594,Alomomola,0594_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+595,Joltik,0595_n.png,Swarm,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+597,Ferroseed,0597_n.png,Anticipation,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+599,Klink,0599_n.png,Clear Body,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+602,Tynamo,0602_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+605,Elgyem,0605_n.png,Analytic,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+607,Litwick,0607_n.png,Infiltrator,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+610,Axew,0610_n.png,Unnerve,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+613,Cubchoo,0613_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+615,Cryogonal,0615_n.png,Levitate,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+616,Shelmet,0616_n.png,Overcoat,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+618,Stunfisk,0618_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+618,Galarian Stunfisk,0618_001_n.png,Mimicry,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+619,Mienfoo,0619_n.png,Reckless,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+621,Druddigon,0621_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+622,Golett,0622_n.png,No Guard,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+624,Pawniard,0624_n.png,Pressure,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+626,Bouffalant,0626_n.png,Soundproof,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+627,Rufflet,0627_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+629,Vullaby,0629_n.png,Weak Armor,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+631,Heatmor,0631_n.png,White Smoke,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+632,Durant,0632_n.png,Truant,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+633,Deino,0633_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+636,Larvesta,0636_n.png,Swarm,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+650,Chespin,0650_n.png,Bulletproof,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+653,Fennekin,0653_n.png,Magician,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+656,Froakie,0656_n.png,Protean,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+659,Bunnelby,0659_n.png,Huge Power,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+661,Fletchling,0661_n.png,Gale Wings,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+664,Scatterbug,0664_n.png,Friend Guard,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+667,Litleo,0667_n.png,Moxie,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+669,Flabébé Red,0669_002_n.png,Symbiosis,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+669,Flabébé Yellow,0669_001_n.png,Symbiosis,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+669,Flabébé Orange,0669_001_n.png,Symbiosis,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+669,Flabébé Blue,0669_002_n.png,Symbiosis,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+669,Flabébé White,0669_002_n.png,Symbiosis,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+672,Skiddo,0672_n.png,Grass Pelt,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+674,Pancham,0674_n.png,Scrappy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+676,Furfrou,0676_n.png,Fur Coat,False,False,True,True,True,True,True,True,True,False,True,False,False,False
+677,Espurr,0677_n.png,Own Tempo,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+679,Honedge,0679_n.png,No Guard,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+682,Spritzee,0682_n.png,Aroma Veil,True,True,True,True,True,True,True,True,True,True,True,False,False,False
+684,Swirlix,0684_n.png,Unburden,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+686,Inkay,0686_n.png,Infiltrator,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+688,Binacle,0688_n.png,Pickpocket,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+690,Skrelp,0690_n.png,Adaptabilty,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+692,Clauncher,0692_n.png,Mega Launcher,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+694,Helioptile,0694_n.png,Solar Power,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+696,Tyrunt,0696_n.png,Sturdy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+698,Amaura,0698_n.png,Snow Warning,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+701,Hawlucha,0701_n.png,Mold Breaker,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+702,Dedenne,0702_n.png,Plus,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+703,Carbink,0703_n.png,Sturdy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+704,Goomy,0704_n.png,Gooey,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+707,Klefki,0707_n.png,Magician,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+708,Phantump,0708_n.png,Harvest,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+710,Pumpkaboo Small,0710_001_n.png,Insomnia,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+710,Pumpkaboo Average,0710_001_n.png,Insomnia,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+710,Pumpkaboo Large,0710_001_n.png,Insomnia,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+710,Pumpkaboo Super,0710_001_n.png,Insomnia,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+712,Bergmite,0712_n.png,Sturdy,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+714,Noibat,0714_n.png,Telepathy,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+722,Rowlet,0722_n.png,Long Reach,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+725,Litten,0725_n.png,Intimidate,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+728,Popplio,0728_n.png,Liquid Voice,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+731,Pikipek,0731_n.png,Pickup,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+734,Yungoos,0734_n.png,Adaptability,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+736,Grubbin,0736_n.png,Swarm,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+739,Crabrawler,0739_n.png,Anger Point,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+741,Oricorio Baile,0741_001_n.png,Dancer,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+741,Oricorio Pom-Pom,0741_001_n.png,Dancer,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+741,Oricorio P'au,0741_001_n.png,Dancer,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+741,Oricorio Sensu,0741_001_n.png,Dancer,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+742,Cutiefly,0742_n.png,Sweet Veil,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+744,Rockruff,0744_n.png,Steadfast,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+744,Rockruff Dusk,0744_001_n.png,Own Tempo,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+746,Wishiwashi,0746_n.png,Schooling,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+747,Mareanie,0747_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+749,Mudbray,0749_n.png,Inner Focus,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+751,Dewpider,0751_n.png,Water Absorb,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+753,Fomantis,0753_n.png,Contrary,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+755,Morelull,0755_n.png,Rain Dish,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+757,Salandit,0757_n.png,Oblivious,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+759,Stufful,0759_n.png,Cute Charm,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+761,Bounsweet,0761_n.png,Sweet Veil,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+764,Comfey,0764_n.png,Natural Cure,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+765,Oranguru,0765_n.png,Symbiosis,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+766,Passimian,0766_n.png,Defiant,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+767,Wimpod,0767_n.png,Wimp Out,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+769,Sandygast,0769_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+771,Pyukumuku,0771_n.png,Unaware,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+774,Minior Red,0774_001_n.png,Shields Down,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+774,Minior Orange,0774_002_n.png,Shields Down,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+774,Minior Yellow,0774_003_n.png,Shields Down,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+774,Minior Green,0774_004_n.png,Shields Down,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+774,Minior Blue,0774_005_n.png,Shields Down,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+774,Minior Indigo,0774_006_n.png,Shields Down,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+774,Minior Violet,0774_007_n.png,Shields Down,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+775,Komala,0775_n.png,Comatose,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+776,Turtonator,0776_n.png,Shell Armor,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+777,Togedemaru,0777_n.png,Sturdy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+778,Mimikyu,0778_n.png,Disguise,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+779,Bruxish,0779_n.png,Wonder Skin,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+780,Drampa,0780_n.png,Cloud Nine,True,True,True,True,True,True,True,True,True,True,True,False,False,False
+781,Dhelmise,0781_n.png,Steelworker,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+782,Jangmo-o,0782_n.png,Overcoat,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+810,Grookey,0810_n.png,Grassy Surge,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+813,Scorbunny,0813_n.png,Libero,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+816,Sobble,0816_n.png,Sniper,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+819,Skwovet,0819_n.png,Gluttony,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+821,Rookidee,0821_n.png,Big Pecks,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+824,Blipbug,0824_n.png,Telepathy,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+827,Nickit,0827_n.png,Stakeout,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+829,Gossifleur,0829_n.png,Effect Spore,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+831,Wooloo,0831_n.png,Bulletproof,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+833,Chewtle,0833_n.png,Swift Swim,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+835,Yamper,0835_n.png,Rattled,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+837,Rolycoly,0837_n.png,Flash Fire,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+840,Applin,0840_n.png,Bulletproof,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+843,Silicobra,0843_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+845,Cramorant,0845_n.png,Gulp Missile,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+846,Arrokuda,0846_n.png,Propeller Tail,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+848,Toxel,0848_n.png,Klutz,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+850,Sizzlipede,0850_n.png,Flame Body,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+852,Clobbopus,0852_n.png,Technician,True,True,True,True,True,True,True,True,True,True,True,True,False,False
+854,Sinistea,0854_n.png,Cursed Body,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+856,Hatenna,0856_n.png,Magic Bounce,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+859,Impidimp,0859_n.png,Pickpocket,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+868,Milcery,0868_n.png,Aroma Veil,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+870,Falinks,0870_n.png,Defiant,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+871,Pincurchin,0871_n.png,Electric Surge,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+872,Snom,0872_n.png,Ice Scales,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+874,Stonjourner,0874_n.png,Power Spot,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+875,Eiscue,0875_n.png,Ice Face,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+876,Indeedee,0876_n.png,Psychic Surge,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+877,Morpeko,0877_n.png,Hunger Switch,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+878,Cufant,0878_n.png,Heavy Metal,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+884,Duraludon,0884_n.png,Stalwart,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+885,Dreepy,0885_n.png,Cursed Body,True,True,True,True,True,True,True,True,True,True,True,True,False,True
+906,Sprigatito,0906_n.png,Protean,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+909,Fuecoco,0909_n.png,Unaware,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+912,Quaxly,0912_n.png,Moxie,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+915,Lechonk,0915_n.png,Thick Fat,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+917,Tarountula,0917_n.png,Stakeout,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+919,Nymble,0919_n.png,Tinted Lens,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+921,Pawmi,0921_n.png,Iron Fist,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+924,Tandemaus,0924_n.png,Own Tempo,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+926,Fidough,0926_n.png,Klutz,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+927,Smoliv,0927_n.png,Harvest,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+931,Squawkabilly Green,0931_004_n.png,Guts,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+931,Squawkabilly Blue,0931_001_n.png,Guts,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+931,Squawkabilly Yellow,0931_002_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+931,Squawkabilly White,0931_003_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+932,Nacli,0932_n.png,Clear Body,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+935,Charcadet,0935_n.png,Flame Body,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+938,Tadbulb,0938_n.png,Damp,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+940,Wattrel,0940_n.png,Competitive,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+942,Maschiff,0942_n.png,Stakeout,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+944,Shroodle,0944_n.png,Prankster,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+946,Bramblin,0946_n.png,Infiltrator,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+948,Toedscool,0948_n.png,Mycelium Might,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+950,Klawf,0950_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+951,Capsakid,0951_n.png,Klutz,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+953,Rellor,0953_n.png,Shed Skin,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+955,Flittle,0955_n.png,Speed Boost,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+957,Tinkatink,0957_n.png,Pickpocket,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+960,Wiglett,0960_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+962,Bombirdier,0962_n.png,Rocky Payload,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+963,Finizen,0963_n.png,Water Veil,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+965,Varoom,0965_n.png,Slow Start,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+967,Cyclizar,0967_n.png,Regenerator,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+968,Orthworm,0968_n.png,Sand Veil,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+969,Glimmet,0969_n.png,Corrosion,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+971,Greavard,0971_n.png,Fluffy,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+973,Flamigo,0973_n.png,Costar,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+974,Cetoddle,0974_n.png,Sheer Force,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+976,Veluza,0976_n.png,Sharpness,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+977,Dondozo,0977_n.png,Water Veil,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+978,Tatsugiri Curly,0978_n.png,Storm Drain,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+978,Tatsugiri Droopy,0978_001_n.png,Storm Drain,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+978,Tatsugiri Stretchy,0978_002_n.png,Storm Drain,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+996,Frigibax,0996_n.png,Ice Body,True,True,True,True,True,True,True,True,True,True,True,False,False,True
+1012,Poltchageist,1012_n.png,Heatproof,True,True,True,True,True,True,True,True,True,True,True,False,False,True

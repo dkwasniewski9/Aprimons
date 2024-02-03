@@ -32,8 +32,9 @@ public class CsvImportService {
              CSVParser csvParser = new CSVParser(fileReader, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
              List<String> pokeballs = csvParser.getHeaderNames();
              pokeballs = pokeballs.subList(4, 15);
-            for (String pokeball: pokeballs ) {
-                pokeballRepository.save(new Pokeball(pokeball, pokeball + ".png"));
+            for (String pokeballName: pokeballs ) {
+                Pokeball pokeball = new Pokeball(pokeballName, pokeballName + ".png");
+                pokeballRepository.save(pokeball);
             }
             for (CSVRecord csvRecord : csvParser) {
                 int dexNumber = Integer.parseInt(csvRecord.get("DEX"));

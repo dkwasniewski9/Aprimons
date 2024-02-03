@@ -1,3 +1,4 @@
+/*
 package com.dkwasniewski.aprimons.controller;
 
 import com.dkwasniewski.aprimons.dto.NewPokemonDTO;
@@ -28,3 +29,4 @@ public class PokemonController {
         return new ResponseDTO(HttpConstants.HTTP_CREATED);
     }
 }
+*/

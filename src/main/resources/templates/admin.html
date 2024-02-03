@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="EN">
+<head>
+    <title>Admin page</title>
+</head>
+<body>
+<h1>Admin page</h1>
+
+<div th:if="${session.loggedUser != null}">
+    <p>Witaj, <span th:text="${session.loggedUser}"></span>! Jesteś zalogowany.</p>
+    <a href="/logout">Wyloguj się</a>
+</div>
+
+<div th:unless="${session.loggedUser != null}">
+    <p>Nie jesteś zalogowany.</p>
+    <a href="/logowanie">Zaloguj się</a>
+</div>
+</body>

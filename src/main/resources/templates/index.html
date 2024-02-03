@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div sec:authorize="isAuthenticated()">
+    Text visible only to authenticated users.
+</div>
+
+</body>
+</html>

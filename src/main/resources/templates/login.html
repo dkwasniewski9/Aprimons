@@ -13,14 +13,7 @@
     <input type="password" id="password" name="password" /> <br />
     <input type="submit" value="Log in" />
 </form>
-
-<div th:if="${session.loggedUser != null}">
-    <p>Witaj, <span th:text="${session.loggedUser}"></span>! Jesteś zalogowany.</p>
-    <a href="/wyloguj">Wyloguj się</a>
-</div>
-
-<div th:unless="${session.loggedUser != null}">
-    <p>Nie jesteś zalogowany.</p>
-    <a href="/logowanie">Zaloguj się</a>
-</div>
+<a th:href="@{/register}">
+    <button>Register</button>
+</a>
 </body>

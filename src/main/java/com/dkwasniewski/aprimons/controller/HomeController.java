@@ -1,5 +1,7 @@
 package com.dkwasniewski.aprimons.controller;
 
+import com.dkwasniewski.aprimons.dto.NewUserDTO;
+import com.dkwasniewski.aprimons.model.User;
 import com.dkwasniewski.aprimons.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -12,6 +14,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -21,11 +24,13 @@ public class HomeController {
     UserService userService;
     private AuthenticationProvider authenticationManager;
     @GetMapping("/")
-    public String greeting() {
+    public String home() {
+
         return "index";
     }
     @GetMapping("/login")
     public String login() {
+
         return "login";
     }
     @PostMapping("/login")
@@ -34,34 +39,28 @@ public class HomeController {
             Authentication authentication = authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(username, password));
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            HttpSession session = request.getSession();
-            session.setAttribute("loggedUser", authentication.getName());
-            Authentication authentication2 = SecurityContextHolder.getContext().getAuthentication();
-            System.out.println("Principal: " + authentication2.getPrincipal());
-            System.out.println("Authorities: " + authentication2.getAuthorities());
             return "redirect:/home";
         }
         catch (Exception e){
             return "redirect:/error";
         }
     }
-    @GetMapping("/admin")
-    public String admin() {
-        return "admin";
-    }
 
-    @GetMapping("/manager")
-    public String manager() {
-        return "manager";
+    @GetMapping("/register")
+    public String register(Model model) {
+        model.addAttribute("newUserDTO", new NewUserDTO());
+        return "register";
     }
-
-    @GetMapping("/employee")
-    public String employee() {
-        return "employee";
-    }
-
-    @GetMapping("/logout")
-    public String logout() {
+    @PostMapping("/register")
+    public String registerPost(NewUserDTO newUserDTO){
+        if(userService.find(newUserDTO.getUsername()) != null){
+            return "redirect:/error";
+        }
+        User user = new User();
+        user.setUsername(newUserDTO.getUsername());
+        user.setEmail(newUserDTO.getEmail());
+        user.setPassword(newUserDTO.getPassword());
+        userService.saveUser(user);
         return "redirect:/login";
     }
 }

@@ -1,4 +1,6 @@
 spring:
+  thymeleaf:
+    encoding: UTF-8
   data:
     mongodb:
       host: localhost
@@ -15,6 +17,14 @@ spring:
             enable: true
     username: aprimonsjavaproject@gmail.com
     password: izxo fbon csaj rsov
+  messages:
+    basename: messages/messages
+    encoding: utf-8
 logging:
   level:
     org.springframework.security: DEBUG
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true

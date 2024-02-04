@@ -40,8 +40,10 @@ public class HomeController {
     private PasswordEncoder passwordEncoder;
     private MailSender mailSender;
     @GetMapping("/")
-    public String home() {
-
+    public String index(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        model.addAttribute("username", username);
         return "index";
     }
     @GetMapping("/login")

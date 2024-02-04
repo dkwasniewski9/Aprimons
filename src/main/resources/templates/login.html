@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="EN">
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
 <head>
     <title>Login page</title>
 </head>
 <body>
-<h1>Login page</h1>
+<h1 th:text="#{login.title}"></h1>
 <form th:action="@{/login}" method="post">
-    <label for="username">Username</label>:
+    <label for="username" th:text="#{login.username}"></label>:
     <input type="text" id="username" name="username"
            autofocus="autofocus" /> <br />
-    <label for="password">Password</label>:
+    <label for="password" th:text="#{login.password}"></label>:
     <input type="password" id="password" name="password" /> <br />
-    <input type="submit" value="Log in" /> <br/>
-    <label for="remember">Remember me<input type="checkbox" id="remember" name="remember-me"></label>
+    <button type="submit" th:text="#{login.submit}" /> <br/>
+    <label for="remember" th:text="#{login.remember}"></label><input type="checkbox" id="remember" name="remember-me">
 </form>
 <a th:href="@{/register}">
-    <button>Register</button>
+    <button th:text="#{login.register}"></button>
 </a>
 </body>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
+    <title>Home</title>
 </head>
 <body>
 <div sec:authorize="isAuthenticated()">
-    Text visible only to authenticated users.
+    <p th:text="#{home.authenticated} + ' ' + ${#authentication.getName()}"></p>
 </div>
-
+<div sec:authorize="isAnonymous()">
+    <p th:text="#{home.notAutheticated}"></p>
+</div>
 </body>
 </html>

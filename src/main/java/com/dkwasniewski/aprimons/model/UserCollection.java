@@ -12,7 +12,7 @@ public class UserCollection
     @Id
     private String id;
     @DBRef
-    private User userId;
+    private User user;
 
     private List<OwnedPokemon> ownedPokemonList;
 }

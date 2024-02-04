@@ -4,6 +4,17 @@ spring:
       host: localhost
       port: 8081
       database: Aprimons
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      smtp:
+        mail:
+          auth: true
+          starttls:
+            enable: true
+    username: aprimonsjavaproject@gmail.com
+    password: izxo fbon csaj rsov
 logging:
   level:
     org.springframework.security: DEBUG

@@ -4,9 +4,12 @@ import com.dkwasniewski.aprimons.repository.UserRepository;
 import com.dkwasniewski.aprimons.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -16,8 +19,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import util.Role;
 
+import java.util.Properties;
+
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfiguration {
 
     private final UserRepository userRepository;
@@ -38,6 +44,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/login").permitAll()
                         .requestMatchers("/error").permitAll()
                         .requestMatchers("/register").permitAll()
+                        .requestMatchers("/confirm").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((formLogin) ->
@@ -48,6 +55,7 @@ public class SecurityConfiguration {
                                 .failureUrl("/login?failed")
                                 .loginProcessingUrl("/login")
                 )
+                .rememberMe(remember -> remember.userDetailsService(userDetailsService()))
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }
@@ -62,5 +70,22 @@ public class SecurityConfiguration {
         provider.setUserDetailsService(userDetailsService());
         provider.setPasswordEncoder(passwordEncoder());
         return provider;
+    }
+    @Bean
+    public JavaMailSender mailSender() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        mailSender.setHost("smtp.gmail.com");
+        mailSender.setPort(587);
+
+        mailSender.setUsername("aprimonsjavaproject@gmail.com");
+        mailSender.setPassword("izxo fbon csaj rsov");
+
+        Properties props = mailSender.getJavaMailProperties();
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.debug", "true");
+
+        return mailSender;
     }
 }

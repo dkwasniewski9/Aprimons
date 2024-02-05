@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="pl">
 <head>
-    <title>Login page</title>
+    <title th:text="#{login.title}"></title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
-<body>
-<h1 th:text="#{login.title}"></h1>
-<form th:action="@{/login}" method="post">
-    <label for="username" th:text="#{login.username}"></label>:
-    <input type="text" id="username" name="username"
-           autofocus="autofocus" /> <br />
-    <label for="password" th:text="#{login.password}"></label>:
-    <input type="password" id="password" name="password" /> <br />
-    <button type="submit" th:text="#{login.submit}" /> <br/>
-    <label for="remember" th:text="#{login.remember}"></label><input type="checkbox" id="remember" name="remember-me">
+<body class="p-4">
+<h1 class="display-4 text-center mb-4" th:text="#{login.title}"></h1>
+<form th:action="@{/login}" method="post" class="mx-auto w-25 ">
+    <div class="mb-3">
+        <label for="username" class="form-label" th:text="#{login.username}"></label>
+        <input type="text" class="form-control" id="username" name="username" autofocus="autofocus" />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label" th:text="#{login.password}"></label>
+        <input type="password" class="form-control" id="password" name="password" />
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="remember" name="remember-me">
+        <label class="form-check-label" for="remember" th:text="#{login.remember}"></label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block w-100" th:text="#{login.submit}"></button>
+    <a th:href="@{/register}" class="btn btn-secondary btn-block w-100 mt-2" role="button" th:text="#{login.register}"></a>
 </form>
-<a th:href="@{/register}">
-    <button th:text="#{login.register}"></button>
-</a>
 </body>
+</html>

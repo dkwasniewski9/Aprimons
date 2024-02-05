@@ -9,6 +9,7 @@
 </div>
 <div sec:authorize="isAnonymous()">
     <p th:text="#{home.notAutheticated}"></p>
+    <a th:href="@{/login}" th:text="#{login.title}"></a>
 </div>
 </body>
 </html>

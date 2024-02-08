@@ -1,43 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="#{home.title}">Home</title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class=navbar-brand th:href="@{/}">Aprimons</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" th:text="#{navbar.home}" th:href="@{/}">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:text="#{navbar.search}" th:href="@{/search}"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:text="#{navbar.MyCollection}" th:href="@{/collection}"></a>
-                </li>
-            </ul>
-            <div class="d-flex text-white" sec:authorize="isAuthenticated()">
-                <ul class="navbar-nav me-auto">
-                <li class="nav-item" th:text="#{home.authenticated} + ' ' + ${#authentication.getName()}"></li>
-                </ul>
-            </div>
-            <div class="d-flex text-white" sec:authorize="isAnonymous()">
-                <ul class="navbar-nav me-auto">
-                <li class="nav-item" th:text="#{home.notAuthenticated}"></li>
-                <li class="nav-item" th:href="@{/login}" th:text="#{login.title}"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
+<div th:replace="navbar.html"></div>
 
 
 </body>

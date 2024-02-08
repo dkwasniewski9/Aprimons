@@ -6,6 +6,8 @@ import com.dkwasniewski.aprimons.repository.PokeballRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PokeballService {
     @Autowired
@@ -15,4 +17,8 @@ public class PokeballService {
     }
 
     public Pokeball findPokeballByName(String name) { return pokeballRepository.findByName(name); }
+
+    public List<Pokeball> getAllPokeball() {
+        return pokeballRepository.findAll();
+    }
 }

@@ -29,7 +29,7 @@ public class CsvImportService {
 
     public void importDataFromCsv(String csvFilePath) throws IOException {
         try (FileReader fileReader = new FileReader(csvFilePath);
-             CSVParser csvParser = new CSVParser(fileReader, CSVFormat.DEFAULT)) {
+             CSVParser csvParser = new CSVParser(fileReader, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
              List<String> pokeballs = csvParser.getHeaderNames();
              pokeballs = pokeballs.subList(4, 15);
             for (String pokeballName: pokeballs ) {

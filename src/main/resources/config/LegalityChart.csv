@@ -11,8 +11,8 @@ DEX,Name,Image,Hidden Ability,Safari,Sport,Fast,Friend,Heavy,Level,Love,Lure,Moo
 23,Ekans,0023_n.png,Unnerve,True,True,True,True,True,True,True,True,True,True,True,False,True,True
 27,Sandshrew,0027_n.png,Sand Rush,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 27,Alolan Sandshrew,0027_001_n.png,Slush Rush,True,True,True,True,True,True,True,True,True,True,True,True,True,True
-29,Nidoran ♀,0029_001_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,True,False
-32,Nidoran ♂,0032_001_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+29,Nidoran ♀,0029_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,True,False
+32,Nidoran ♂,0032_n.png,Hustle,True,True,True,True,True,True,True,True,True,True,True,True,True,False
 37,Vulpix,0037_n.png,Drought,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 37,Alolan Vulpix,0037_001_n.png,Snow Warning,True,True,True,True,True,True,True,True,True,True,True,True,True,True
 41,Zubat,0041_n.png,Infiltrator,True,True,True,True,True,True,True,True,True,True,True,True,True,False

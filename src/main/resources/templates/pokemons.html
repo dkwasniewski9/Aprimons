@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Pokemons</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="navbar.html"></div>
+<h1 class="text-center">All Pokemons</h1>
+<div class="container">
+
+    <table class="table table-bordered table-striped text-center ">
+        <thead class="table-dark align-middle">
+        <tr>
+            <th>Dex Number</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th th:each="pokeball : ${pokeballList}" th:text="${pokeball.getName()}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pokemon : ${pokemonDTOList} ">
+            <td class="col-1 text-center align-middle" th:text="${pokemon.getDexNumber()}"></td>
+            <td class="col-1 col-md text-center align-middle" th:text="${pokemon.getName()}"></td>
+            <td class="col-1 text-center align-middle"><img class="img-fluid" th:src="@{'/images/pokemons/' + ${pokemon.getImage()}}" alt="Pokemon Image"></td>
+            <td class="col-1 text-center align-middle" th:each="pokeball : ${pokeballList}" >
+                    <img th:if="${pokemon.getPokeballs().contains(pokeball)}" th:src="@{'/images/balls/' + ${pokeball.getName()} + '.png'}">
+
+                    <img th:unless="${pokemon.getPokeballs().contains(pokeball)}" th:src="@{/images/others/cross.png}">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

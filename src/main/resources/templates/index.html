@@ -3,10 +3,48 @@
 <head>
     <title th:text="#{home.title}">Home</title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
 </head>
 <body>
 <div th:replace="navbar.html"></div>
+<div class="container mt-5">
+<h1 class="mb-4">Wyszukiwarka</h1>
 
-
+<form th:action="@{/collection}" method="get" class="mb-4">
+    <div class="input-group">
+        <label for="username"></label><input type="text" id="username" name="username" class="form-control" placeholder="Wyszukaj użytkownika..." required>
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary" th:text="#{search.search}"></button>
+        </div>
+    </div>
+</form>
+    <div class="container w-50">
+        <section class="mt-5">
+            <h2 class="text-center mt-5" th:text="#{aprimon.intro.title}"></h2>
+            <p th:text="#{aprimon.intro.description}"></p>
+        </section>
+        <section class="mt-5 justify-content-center">
+            <h2 class="text-center" th:text="#{aprimon.apriballs.title}"></h2>
+            <p th:text="#{aprimon.apriballs.description}"></p>
+            <ul class="row list-unstyled justify-content-center">
+                <th:block th:each="pokeball, iterStat : ${pokeballList}">
+                    <li class="col-4 mb-3">
+                        <div class="d-flex flex-column align-items-center">
+                            <img class="img-fluid" th:src="@{'/images/balls/' + ${pokeball.getImage()}}" alt="Pokemon Image">
+                            <p class="text-center" th:text="${pokeball.getName()}"></p>
+                        </div>
+                    </li>
+                    <th:block th:if="${iterStat.index % 3 == 2}">
+                        <div class="w-100"></div>
+                    </th:block>
+                </th:block>
+            </ul>
+        </section>
+        <section class="mt-5">
+            <h2 class="text-center" th:text="#{aprimon.importance.title}"></h2>
+            <p th:text="#{aprimon.importance.description}"></p>
+        </section>
+    </div>
+</div>
 </body>
 </html>

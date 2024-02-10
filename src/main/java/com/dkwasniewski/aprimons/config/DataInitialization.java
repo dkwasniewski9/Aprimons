@@ -41,7 +41,7 @@ public class DataInitialization implements CommandLineRunner {
         user.setUsername("pingwin");
         user.setPassword(passwordEncoder.encode("zaq1@WSX"));
         user.setEmail("pingwin296@gmail.com");
-        user.setRole(Role.admin);
+        user.setRole(Role.ADMIN);
         user.setActive(true);
         userService.saveUser(user);
 

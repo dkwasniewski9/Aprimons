@@ -34,4 +34,10 @@ public class UserService implements UserDetailsService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return userRepository.findUserByUsername(authentication.getName());
     }
+
+    public void activateUser(User user){
+
+        user.setActive(true);
+        userRepository.save(user);
+    }
 }

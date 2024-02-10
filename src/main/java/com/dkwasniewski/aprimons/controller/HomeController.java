@@ -28,7 +28,6 @@ import util.Role;
 
 import java.time.LocalDateTime;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -39,37 +38,33 @@ public class HomeController {
     private MailTokenService mailTokenService;
     private AuthenticationProvider authenticationManager;
     private PasswordEncoder passwordEncoder;
-    private MailSender mailSender;
-    private final MessageSource messageSource;
     private final LocaleResolver localeResolver;
     @GetMapping("/")
     public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
-        Locale currentLocation = (Locale) request.getSession().getAttribute("locale");
-        if(currentLocation == null) {
-            localeResolver.setLocale(request, response, Locale.getDefault());
-            request.getSession().setAttribute("locale", Locale.getDefault());
+        Locale currentLocale = (Locale) request.getSession().getAttribute("locale");
+        if(currentLocale == null) {
+            Locale defaultLocale = Locale.getDefault();
+            localeResolver.setLocale(request, response, defaultLocale);
+            request.getSession().setAttribute("locale", defaultLocale);
         }
         model.addAttribute(pokeballService.getAllPokeball());
         return "index";
     }
     @GetMapping("/login")
     public String login() {
-
         return "login";
     }
     @GetMapping("/language")
     public String changeLanguage(HttpServletRequest request, HttpServletResponse response) {
-        String lang;
-        Locale currentLocation = (Locale) request.getSession().getAttribute("locale");
-        if(currentLocation != null && Objects.equals(currentLocation.getLanguage(), "en")){
-            lang = "pl";
+        Locale currentLocale = (Locale) request.getSession().getAttribute("locale");
+        Locale newLocale;
+        if(currentLocale == null || currentLocale.getLanguage().equals(Locale.ENGLISH.getLanguage())) {
+            newLocale = Locale.forLanguageTag("pl");
+        } else {
+            newLocale = Locale.ENGLISH;
         }
-        else{
-            lang = "en";
-        }
-        Locale locale = new Locale(lang);
-        localeResolver.setLocale(request, response, locale);
-        request.getSession().setAttribute("locale", locale);
+        localeResolver.setLocale(request, response, newLocale);
+        request.getSession().setAttribute("locale", newLocale);
         return "redirect:" + request.getHeader("referer");
     }
     @GetMapping("/search")
@@ -115,33 +110,18 @@ public class HomeController {
         user.setUsername(newUserDTO.getUsername());
         user.setEmail(newUserDTO.getEmail());
         user.setPassword(passwordEncoder.encode(newUserDTO.getPassword()));
-        user.setRole(Role.user);
+        user.setRole(Role.USER);
         userService.saveUser(user);
-        MailToken mailToken = new MailToken();
-        mailToken.setUUID(UUID.randomUUID().toString());
-        mailToken.setCreationDate(LocalDateTime.now());
-        mailToken.setExpiringDate(LocalDateTime.now().plusMinutes(30));
-        mailToken.setActive(true);
-        mailToken.setUser(user);
-        mailTokenService.save(mailToken);
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(user.getEmail());
-        mailMessage.setSubject(messageSource.getMessage("mail.subject", null, LocaleContextHolder.getLocale()));
-        mailMessage.setText(messageSource.getMessage("mail.text", null, LocaleContextHolder.getLocale())
-        + " http://localhost:8080/confirm?token="
-                + mailToken.getUUID());
-        mailSender.send(mailMessage);
+        mailTokenService.sendConfirmationMail(user);
         return "redirect:/login";
     }
     @GetMapping("/confirm")
     public String confirm(@RequestParam String token){
         MailToken mailToken = mailTokenService.findByUUID(token);
         if(mailToken.getExpiringDate().isAfter(LocalDateTime.now())){
+            mailTokenService.confirmUser(mailToken);
             User user = mailToken.getUser();
-            user.setActive(true);
-            userService.saveUser(user);
-            mailToken.setActive(false);
-            mailTokenService.save(mailToken);
+            userService.activateUser(user);
         }
         return "login";
     }

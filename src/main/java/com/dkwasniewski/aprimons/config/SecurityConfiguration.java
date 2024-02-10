@@ -41,14 +41,7 @@ public class SecurityConfiguration {
             throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/login").permitAll()
-                        .requestMatchers("/error").permitAll()
-                        .requestMatchers("/register").permitAll()
-                        .requestMatchers("/confirm").permitAll()
-                        .requestMatchers("/css/**").permitAll()
-                        .requestMatchers("/images").permitAll()
-                        .requestMatchers("/").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .formLogin((formLogin) ->
                         formLogin

@@ -9,6 +9,27 @@
 <div th:replace="navbar.html"></div>
 <h1 class="text-center">All Pokemons</h1>
 <div class="container">
+    <form th:action="@{/pokemon/all}" method="get">
+        <label for="order">Sort by:</label>
+        <select id="order" name="order">
+            <option value="dexNumber" th:selected="${order == 'dexNumber'}" th:text="DexNumber"></option>
+            <option value="name" th:selected="${order == 'name'}" th:text="Name"></option>
+        </select>
+        <label for="direction"></label>
+        <select id="direction" name="direction">
+            <option value="asc" th:selected="${direction == 'asc'}">Asc</option>
+            <option value="desc" th:selected="${direction == 'desc'}">Desc</option>
+        </select>
+        <input type="hidden" name="size" th:value="${pokemons.getSize()}">
+        <button type="submit">Sort</button>
+    </form>
+
+    <div class="btn-group" role="group" aria-label="Liczba wyników na stronie">
+        <a th:href="@{'/pokemon/all?page=0&amp;size=20&amp;order=' + ${order} + '&amp;direction=' + ${direction}}" class="btn btn-secondary" th:text="20">20</a>
+        <a th:href="@{'/pokemon/all?page=0&amp;size=50&amp;order=' + ${order} + '&amp;direction=' + ${direction}}" class="btn btn-secondary" th:text="50">50</a>
+        <a th:href="@{'/pokemon/all?page=0&amp;size=100&amp;order=' + ${order} + '&amp;direction=' + ${direction}}" class="btn btn-secondary" th:text="100">100</a>
+    </div>
+
 
     <table class="table table-bordered table-striped text-center ">
         <thead class="table-dark align-middle">
@@ -20,7 +41,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="pokemon : ${pokemonDTOList} ">
+        <tr th:each="pokemon : ${pokemons} ">
             <td class="col-1 text-center align-middle" th:text="${pokemon.getDexNumber()}"></td>
             <td class="col-1 col-md text-center align-middle" th:text="${pokemon.getName()}"></td>
             <td class="col-1 text-center align-middle"><img class="img-fluid" th:src="@{'/images/pokemons/' + ${pokemon.getImage()}}" alt="Pokemon Image"></td>
@@ -32,6 +53,16 @@
         </tr>
         </tbody>
     </table>
+    <div>
+        <span>Strona:</span>
+        <span th:text="${pokemons.number + 1}"></span>
+        <span>z</span>
+        <span th:text="${pokemons.totalPages}"></span>
+    </div>
+    <div>
+        <a th:if="${pokemons.hasPrevious}" th:href="@{/pokemon/all(page=${pokemons.number - 1}, size=${pokemons.size}, order=${order}, direction=${direction})}">Poprzednia</a>
+        <a th:if="${pokemons.hasNext}" th:href="@{/pokemon/all(page=${pokemons.number + 1}, size=${pokemons.size}, order=${order}, direction=${direction})}">Następna</a>
+    </div>
 </div>
 </body>
 </html>

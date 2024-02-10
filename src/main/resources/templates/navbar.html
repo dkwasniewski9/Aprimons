@@ -15,22 +15,25 @@
                     <a class="nav-link" th:text="#{navbar.pokemons}" th:href="@{/pokemon/all}"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:text="#{navbar.MyCollection}" th:href="@{/collection}"></a>
+                    <a class="nav-link" th:text="#{navbar.MyCollection}" th:href="@{/collection/my}"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:text="#{navbar.search}" th:href="@{/search}"></a>
+                    <a class="nav-link" th:text="#{navbar.changeLang}" th:href="@{/language}"></a>
                 </li>
             </ul>
             <div class="d-flex text-white" sec:authorize="isAuthenticated()">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item" th:text="#{home.authenticated} + ' ' + ${#authentication.getName()}"></li>
+                    <a class="nav-link" th:text="#{navbar.logout}" th:href="@{/logout}"></a>
                 </ul>
             </div>
             <div class="d-flex text-white" sec:authorize="isAnonymous()">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item" th:text="#{home.notAuthenticated}"></li>
-                    <li class="nav-item" th:href="@{/login}" th:text="#{login.title}"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:text="#{home.notAuthenticated} + ' ' +#{login.title}" th:href="@{/login}"></a>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </div>

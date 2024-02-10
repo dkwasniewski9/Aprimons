@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Pokemons</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="navbar.html"></div>
+<h1 class="text-center">Your pokemons</h1>
+<th:block th:if="${#authentication.getName() == DTO.getUsername()}">
+    <form action="/collection/save" method="post" id="form" >
+        <input type="hidden" name="userId" th:value="${DTO.getUserId()}" id="userId">
+        <input type="hidden" name="selectedIds" value="" id="selectedIds">
+        <button id="save-button" th:text="save"></button>
+    </form>
+</th:block>
+
+<div class="container">
+    <table class="table table-bordered table-striped text-center ">
+        <thead class="table-dark align-middle">
+        <tr>
+            <th>Dex Number</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th th:each="pokeball : ${DTO.getPokeballList()}" th:text="${pokeball.getName()}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pokemon : ${DTO.getPokemonList()} ">
+            <td class="col-1 text-center align-middle" th:text="${pokemon.getDexNumber()}"></td>
+            <td class="col-1 col-md text-center align-middle" th:text="${pokemon.getName()}"></td>
+            <td class="col-1 text-center align-middle"><img class="img-fluid" th:src="@{'/images/pokemons/' + ${pokemon.getImage()}}" alt="Pokemon Image"></td>
+            <td class="col-1 text-center align-middle interactive-cell" th:each="pokeball : ${DTO.getPokeballList()}">
+                <th:block th:if="${pokemon.getPokeballs().contains(pokeball)}">
+                    <img style="" class="interactive-image invisible" th:id="${pokemon.getId()} + '-' + ${pokeball.getId()}" th:src="@{'/images/balls/' + ${pokeball.getName()} + '.png'}" th:if="${pokeball.getId() == pokeball.getId()}">
+                </th:block>
+                <img th:unless="${pokemon.getPokeballs().contains(pokeball)}" th:src="@{/images/others/cross.png}">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="init" th:data="${DTO.getUserCollection().getOwnedPokemonList()}"></div>
+</div>
+<script th:inline="javascript">
+    if([[${DTO.isEditable()}]]){
+        document.querySelectorAll('.interactive-cell').forEach(function(cell) {
+            cell.addEventListener('click', function() {
+                const image = cell.querySelector('.interactive-image');
+                image.classList.toggle('selected');
+                image.classList.toggle('invisible');
+            });
+        });
+    }
+    const collection = [[${DTO.getUserCollection().getOwnedPokemonList()}]];
+    collection.forEach(function (row) {
+        row['pokeballVariantIds'].forEach(function (column){
+             console.log(row['pokemonId'] + '-' + column);
+             document.getElementById(row['pokemonId'] + '-' + column).classList.toggle('selected');
+            document.getElementById(row['pokemonId'] + '-' + column).classList.toggle('invisible');
+            }
+        )
+    });
+    const button = document.getElementById('save-button');
+    button.addEventListener('click', function(){
+        const selectedElements = document.querySelectorAll('.selected');
+        let selectedIds = [];
+
+        selectedElements.forEach(function(element){
+            selectedIds.push(element.id);
+        })
+        document.getElementById('selectedIds').value = selectedIds;
+        console.log(selectedIds);
+        console.log(document.getElementById('selectedIds').value);
+        document.getElementById('form').submit();
+    })
+</script>
+</body>
+</html>

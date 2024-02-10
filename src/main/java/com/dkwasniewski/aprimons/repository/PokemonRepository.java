@@ -9,4 +9,5 @@ import java.util.List;
 public interface PokemonRepository extends MongoRepository<Pokemon, String> {
 
     Pokemon findByName(String name);
+    Pokemon findByDexNumber(int dexNumber);
 }

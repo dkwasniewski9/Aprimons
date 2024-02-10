@@ -1,6 +1,6 @@
 package util;
 
 public class Role {
-    public static String user = "USER";
-    public static String admin = "ADMIN";
+    public static final String user = "USER";
+    public static final String admin = "ADMIN";
 }

@@ -4,46 +4,52 @@ import com.dkwasniewski.aprimons.dto.NewUserDTO;
 import com.dkwasniewski.aprimons.model.MailToken;
 import com.dkwasniewski.aprimons.model.User;
 import com.dkwasniewski.aprimons.service.MailTokenService;
+import com.dkwasniewski.aprimons.service.PokeballService;
 import com.dkwasniewski.aprimons.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.LocaleResolver;
 import util.Role;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Locale;
+import java.util.Objects;
 import java.util.UUID;
 
 @AllArgsConstructor
 @Controller
 public class HomeController {
     private UserService userService;
+    private PokeballService pokeballService;
     private MailTokenService mailTokenService;
     private AuthenticationProvider authenticationManager;
     private PasswordEncoder passwordEncoder;
     private MailSender mailSender;
+    private final MessageSource messageSource;
+    private final LocaleResolver localeResolver;
     @GetMapping("/")
-    public String index(Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        model.addAttribute("username", username);
+    public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
+        Locale currentLocation = (Locale) request.getSession().getAttribute("locale");
+        if(currentLocation == null) {
+            localeResolver.setLocale(request, response, Locale.getDefault());
+            request.getSession().setAttribute("locale", Locale.getDefault());
+        }
+        model.addAttribute(pokeballService.getAllPokeball());
         return "index";
     }
     @GetMapping("/login")
@@ -51,10 +57,31 @@ public class HomeController {
 
         return "login";
     }
+    @GetMapping("/language")
+    public String changeLanguage(HttpServletRequest request, HttpServletResponse response) {
+        String lang;
+        Locale currentLocation = (Locale) request.getSession().getAttribute("locale");
+        if(currentLocation != null && Objects.equals(currentLocation.getLanguage(), "en")){
+            lang = "pl";
+        }
+        else{
+            lang = "en";
+        }
+        Locale locale = new Locale(lang);
+        localeResolver.setLocale(request, response, locale);
+        request.getSession().setAttribute("locale", locale);
+        return "redirect:" + request.getHeader("referer");
+    }
+    @GetMapping("/search")
+    public String search() {
+
+        return "index";
+    }
     @PostMapping("/login")
     public String postLogin(String username, String password, HttpServletRequest request){
+        //TODO sprawdzanie hasła
         try{
-            if(!userService.find(username).isActive()){
+            if(!userService.findUserByUsername(username).isActive()){
                 return "redirect:/login";
             }
             Authentication authentication = authenticationManager
@@ -66,7 +93,14 @@ public class HomeController {
             return "redirect:/error";
         }
     }
-
+    @GetMapping("/logout")
+    public String logout(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            SecurityContextHolder.getContext().setAuthentication(null);
+        }
+        return "redirect:/";
+    }
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("newUserDTO", new NewUserDTO());
@@ -74,7 +108,7 @@ public class HomeController {
     }
     @PostMapping("/register")
     public String registerPost(NewUserDTO newUserDTO){
-        if(userService.find(newUserDTO.getUsername()) != null){
+        if(userService.findUserByUsername(newUserDTO.getUsername()) != null){
             return "redirect:/error";
         }
         User user = new User();
@@ -92,9 +126,9 @@ public class HomeController {
         mailTokenService.save(mailToken);
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(user.getEmail());
-        mailMessage.setSubject("Complete Aprimons account Registration!");
-        mailMessage.setText("To confirm your account, please click this link:"
-        +"http://localhost:8080/confirm?token="
+        mailMessage.setSubject(messageSource.getMessage("mail.subject", null, LocaleContextHolder.getLocale()));
+        mailMessage.setText(messageSource.getMessage("mail.text", null, LocaleContextHolder.getLocale())
+        + " http://localhost:8080/confirm?token="
                 + mailToken.getUUID());
         mailSender.send(mailMessage);
         return "redirect:/login";

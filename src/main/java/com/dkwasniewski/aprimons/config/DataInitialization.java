@@ -1,30 +1,33 @@
 package com.dkwasniewski.aprimons.config;
 
+import com.dkwasniewski.aprimons.model.OwnedPokemon;
 import com.dkwasniewski.aprimons.model.User;
+import com.dkwasniewski.aprimons.model.UserCollection;
 import com.dkwasniewski.aprimons.repository.PokeballRepository;
+import com.dkwasniewski.aprimons.repository.PokemonRepository;
+import com.dkwasniewski.aprimons.repository.UserCollectionRepository;
 import com.dkwasniewski.aprimons.service.CsvImportService;
 import com.dkwasniewski.aprimons.service.UserService;
+import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import util.Role;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
+@AllArgsConstructor
 public class DataInitialization implements CommandLineRunner {
 
     private final CsvImportService importService;
     private final UserService userService;
     private final PokeballRepository pokeballRepository;
     private final PasswordEncoder passwordEncoder;
-
-    public DataInitialization(CsvImportService importService, UserService userService, PokeballRepository pokeballRepository, PasswordEncoder passwordEncoder) {
-        this.importService = importService;
-        this.userService = userService;
-        this.pokeballRepository = pokeballRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
+    private final PokemonRepository pokemonRepository;
+    private final UserCollectionRepository userCollectionRepository;
 
     @Override
     public void run(String... args) {
@@ -39,6 +42,15 @@ public class DataInitialization implements CommandLineRunner {
         user.setPassword(passwordEncoder.encode("zaq1@WSX"));
         user.setEmail("pingwin296@gmail.com");
         user.setRole(Role.admin);
+        user.setActive(true);
         userService.saveUser(user);
+
+        UserCollection userCollection = new UserCollection(user.getId());
+        List<OwnedPokemon> ownedPokemonList = new ArrayList<>();
+        List<String> pokeballIdList = new ArrayList<>();
+        pokeballIdList.add(pokeballRepository.findByName("Safari").getId());
+        ownedPokemonList.add(new OwnedPokemon(pokemonRepository.findByDexNumber(1).getId(), pokeballIdList));
+        userCollection.setOwnedPokemonList(ownedPokemonList);
+        userCollectionRepository.save(userCollection);
     }
 }

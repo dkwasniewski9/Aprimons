@@ -50,6 +50,7 @@ public class CsvImportService {
                 Pokemon pokemon = new Pokemon(dexNumber, name, image);
                 pokemon.setPokeballs(list);
                 pokemonRepository.save(pokemon);
+
             }
         }
     }

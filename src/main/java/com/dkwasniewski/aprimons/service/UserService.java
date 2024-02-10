@@ -3,6 +3,8 @@ package com.dkwasniewski.aprimons.service;
 import com.dkwasniewski.aprimons.model.User;
 import com.dkwasniewski.aprimons.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,5 +28,10 @@ public class UserService implements UserDetailsService {
                 .password(userEntity.getPassword())
                 .roles(userEntity.getRole())
                 .build();
+    }
+
+    public User getCurrentUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return userRepository.findUserByUsername(authentication.getName());
     }
 }

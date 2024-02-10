@@ -32,8 +32,7 @@ public class CollectionController {
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
     public String myCollection(Model model){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.findUserByUsername(authentication.getName());
+        User user = userService.getCurrentUser();
         String username = user.getUsername();
         String userId = user.getId();
         boolean editable = true;
@@ -49,29 +48,35 @@ public class CollectionController {
         if(username == null){
             return "redirect:/collection/my";
         }
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUsername(username);
-        String userId;
-        boolean editable;
-        if(Objects.equals(authentication.getName(), user.getUsername())){
-            userId = user.getId();
-            editable = true;
+        if (user == null) {
+            //TODO obsluga bledu
+            return "error";
         }
-        else{
-            userId = "";
+        String userId = user.getId();
+        boolean editable = true;
+
+        if (!username.equals(SecurityContextHolder.getContext().getAuthentication().getName())) {
             editable = false;
         }
-        UserCollection userCollection = userCollectionService.getUserCollection(user.getId());
-        List<Pokemon> pokemonList = pokemonService.getAllPokemon();
-        List<Pokeball> pokeballList = pokeballService.getAllPokeball();
-        model.addAttribute("DTO", new PokemonCollectionDTO(username, userId, editable, pokemonList, pokeballList, userCollection));
+
+        model.addAttribute("DTO", new PokemonCollectionDTO(username, userId, editable,
+                                                                        pokemonService.getAllPokemon(),
+                                                                        pokeballService.getAllPokeball(),
+                                                                        userCollectionService.getUserCollection(user.getId())));
 
         return "collection";
     }
     @PostMapping("save")
     @PreAuthorize("isAuthenticated()")
     public String saveCollection(SaveCollectionDTO saveCollectionDTO){
+        if (saveCollectionDTO.getUserId() == null || saveCollectionDTO.getSelectedIds() == null) {
+            throw new IllegalArgumentException("Nieprawidłowe dane wejściowe");
+        }
         UserCollection userCollection = userCollectionService.getUserCollection(saveCollectionDTO.getUserId());
+        if (userCollection == null) {
+            throw new RuntimeException("Kolekcja użytkownika nie istnieje");
+        }
         List<OwnedPokemon> newCollection = new ArrayList<>();
         for (String recordId : saveCollectionDTO.getSelectedIds()) {
             String[] parts = recordId.split("-");

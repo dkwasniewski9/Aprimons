@@ -20,6 +20,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -73,11 +74,13 @@ public class HomeController {
         return "index";
     }
     @PostMapping("/login")
-    public String postLogin(String username, String password, HttpServletRequest request){
-        //TODO sprawdzanie hasła
+    public String postLogin(String username, String password, HttpServletRequest request, BindingResult bindingResult){
         try{
+            if (bindingResult.hasErrors()) {
+                return "redirect:/error";
+            }
             if(!userService.findUserByUsername(username).isActive()){
-                return "redirect:/login";
+                throw new Exception("Account not active");
             }
             Authentication authentication = authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(username, password));
@@ -106,11 +109,10 @@ public class HomeController {
         if(userService.findUserByUsername(newUserDTO.getUsername()) != null){
             return "redirect:/error";
         }
-        User user = new User();
-        user.setUsername(newUserDTO.getUsername());
-        user.setEmail(newUserDTO.getEmail());
-        user.setPassword(passwordEncoder.encode(newUserDTO.getPassword()));
-        user.setRole(Role.USER);
+        User user = new User(newUserDTO.getUsername(),
+                newUserDTO.getEmail(),
+                newUserDTO.getPassword(),
+                Role.USER);
         userService.saveUser(user);
         mailTokenService.sendConfirmationMail(user);
         return "redirect:/login";

@@ -4,9 +4,10 @@
     <title th:text="#{login.title}"></title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
-<body class="p-4">
-<h1 class="display-4 text-center mb-4" th:text="#{login.title}"></h1>
-<form th:action="@{/login}" method="post" class="mx-auto w-25 ">
+<body>
+<div th:replace="navbar.html"></div>
+<h1 class="display-4 text-center mb-4 p-4" th:text="#{login.title }"></h1>
+<form th:action="@{/login}" method="post" class="mx-auto w-25 p4">
     <div class="mb-3">
         <label for="username" class="form-label" th:text="#{login.username}"></label>
         <input type="text" class="form-control" id="username" name="username" autofocus="autofocus" />

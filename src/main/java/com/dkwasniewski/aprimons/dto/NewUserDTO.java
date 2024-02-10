@@ -1,13 +1,22 @@
 package com.dkwasniewski.aprimons.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.dkwasniewski.aprimons.validator.PasswordMatch;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
+@PasswordMatch
 public class NewUserDTO {
+    @NotNull
+    @Min(6)
     private String username;
+    @NotNull
+    @Email
     private String email;
+    @NotNull
     private String password;
+    @NotNull
     private String confirmPassword;
 }

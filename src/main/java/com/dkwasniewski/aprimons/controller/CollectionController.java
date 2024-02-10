@@ -14,6 +14,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import util.Role;
 
@@ -54,11 +55,7 @@ public class CollectionController {
             return "redirect:/error";
         }
         String userId = user.getId();
-        boolean editable = true;
-
-        if (!username.equals(SecurityContextHolder.getContext().getAuthentication().getName())) {
-            editable = false;
-        }
+        boolean editable = username.equals(SecurityContextHolder.getContext().getAuthentication().getName());
 
         model.addAttribute("DTO", new PokemonCollectionDTO(username, userId, editable,
                                                                         pokemonService.getAllPokemon(),
@@ -69,7 +66,10 @@ public class CollectionController {
     }
     @PostMapping("save")
     @PreAuthorize("isAuthenticated()")
-    public String saveCollection(SaveCollectionDTO saveCollectionDTO){
+    public String saveCollection(SaveCollectionDTO saveCollectionDTO, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "redirect:/error";
+        }
         if (saveCollectionDTO.getUserId() == null || saveCollectionDTO.getSelectedIds() == null) {
             throw new IllegalArgumentException("Nieprawidłowe dane wejściowe");
         }

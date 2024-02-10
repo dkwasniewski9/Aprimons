@@ -51,7 +51,7 @@ public class CollectionController {
         User user = userService.findUserByUsername(username);
         if (user == null) {
             //TODO obsluga bledu
-            return "error";
+            return "redirect:/error";
         }
         String userId = user.getId();
         boolean editable = true;

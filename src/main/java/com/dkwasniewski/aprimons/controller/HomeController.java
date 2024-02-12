@@ -8,6 +8,7 @@ import com.dkwasniewski.aprimons.service.PokeballService;
 import com.dkwasniewski.aprimons.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.LocaleResolver;
 import util.Role;
 
+import java.io.Console;
 import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.UUID;
@@ -105,7 +107,10 @@ public class HomeController {
         return "register";
     }
     @PostMapping("/register")
-    public String registerPost(NewUserDTO newUserDTO){
+    public String registerPost(@Valid NewUserDTO newUserDTO, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "redirect:/error";
+        }
         if(userService.findUserByUsername(newUserDTO.getUsername()) != null){
             return "redirect:/error";
         }

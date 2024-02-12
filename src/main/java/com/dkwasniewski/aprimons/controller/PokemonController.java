@@ -1,8 +1,10 @@
 package com.dkwasniewski.aprimons.controller;
+import com.dkwasniewski.aprimons.dto.AllPokemonDTO;
 import com.dkwasniewski.aprimons.model.Pokeball;
 import com.dkwasniewski.aprimons.model.Pokemon;
 import com.dkwasniewski.aprimons.service.PokeballService;
 import com.dkwasniewski.aprimons.service.PokemonService;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -24,22 +26,18 @@ public class PokemonController {
     private final PokeballService pokeballService;
 
     @GetMapping("all")
-    public String AllPokemons(@RequestParam(defaultValue = "0") @Min(0) int page,
-                              @RequestParam(defaultValue = "20") @Min(20) int size,
-                              @RequestParam(required = false, defaultValue = "dexNum") String order,
-                              @RequestParam(required = false, defaultValue = "asc") String direction,
-                              Model model,
-                              BindingResult bindingResult) {
+    public String AllPokemons(@Valid AllPokemonDTO allPokemonDTO,
+                              BindingResult bindingResult,
+                              Model model) {
         if (bindingResult.hasErrors()) {
             return "redirect:/error";
         }
-        PageRequest pageRequest = PageRequest.of(page, size, Sort.Direction.fromString(direction), order);
+        PageRequest pageRequest = PageRequest.of(allPokemonDTO.getPage(), allPokemonDTO.getSize(), Sort.Direction.fromString(allPokemonDTO.getDirection()), allPokemonDTO.getOrder());
         Page<Pokemon> pokemons = pokemonService.getAllPokemonPages(pageRequest);
         model.addAttribute("pokemons", pokemons);
         List<Pokeball> pokeballs = pokeballService.getAllPokeball();
         model.addAttribute(pokeballs);
-        model.addAttribute("order", order);
-        model.addAttribute("direction", direction);
+        model.addAttribute("allPokemonDTO", allPokemonDTO);
         return "pokemons";
     }
 }

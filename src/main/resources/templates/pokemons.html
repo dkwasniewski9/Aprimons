@@ -12,23 +12,29 @@
     <form th:action="@{/pokemon/all}" method="get">
         <label for="order">Sort by:</label>
         <select id="order" name="order">
-            <option value="dexNumber" th:selected="${order == 'dexNumber'}" th:text="DexNumber"></option>
-            <option value="name" th:selected="${order == 'name'}" th:text="Name"></option>
+            <option value="dexNumber" th:selected="${allPokemonDTO.getOrder() == 'dexNumber'}" th:text="DexNumber"></option>
+            <option value="name" th:selected="${allPokemonDTO.getOrder() == 'name'}" th:text="Name"></option>
         </select>
         <label for="direction"></label>
         <select id="direction" name="direction">
-            <option value="asc" th:selected="${direction == 'asc'}">Asc</option>
-            <option value="desc" th:selected="${direction == 'desc'}">Desc</option>
+            <option value="asc" th:selected="${allPokemonDTO.getDirection() == 'asc'}">Asc</option>
+            <option value="desc" th:selected="${allPokemonDTO.getDirection() == 'desc'}">Desc</option>
         </select>
-        <input type="hidden" name="size" th:value="${pokemons.getSize()}">
-        <button type="submit">Sort</button>
+        <br>
+        <label>Page size:</label>
+        <div class="btn-group">
+            <label class="btn btn-secondary">
+                <input type="radio" name="size" value="20" th:checked="${allPokemonDTO.getSize() == 20}"> 20
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="size" value="50" th:checked="${allPokemonDTO.getSize() == 50}"> 50
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="size" value="100" th:checked="${allPokemonDTO.getSize() == 100}"> 100
+            </label>
+        </div>
+        <button type="submit">Refresh</button>
     </form>
-
-    <div class="btn-group" role="group" aria-label="Liczba wyników na stronie">
-        <a th:href="@{'/pokemon/all?page=0&amp;size=20&amp;order=' + ${order} + '&amp;direction=' + ${direction}}" class="btn btn-secondary" th:text="20">20</a>
-        <a th:href="@{'/pokemon/all?page=0&amp;size=50&amp;order=' + ${order} + '&amp;direction=' + ${direction}}" class="btn btn-secondary" th:text="50">50</a>
-        <a th:href="@{'/pokemon/all?page=0&amp;size=100&amp;order=' + ${order} + '&amp;direction=' + ${direction}}" class="btn btn-secondary" th:text="100">100</a>
-    </div>
 
 
     <table class="table table-bordered table-striped text-center ">
@@ -60,8 +66,8 @@
         <span th:text="${pokemons.totalPages}"></span>
     </div>
     <div>
-        <a th:if="${pokemons.hasPrevious}" th:href="@{/pokemon/all(page=${pokemons.number - 1}, size=${pokemons.size}, order=${order}, direction=${direction})}">Poprzednia</a>
-        <a th:if="${pokemons.hasNext}" th:href="@{/pokemon/all(page=${pokemons.number + 1}, size=${pokemons.size}, order=${order}, direction=${direction})}">Następna</a>
+        <a th:if="${pokemons.hasPrevious}" th:href="@{/pokemon/all}">Poprzednia</a>
+        <a th:if="${pokemons.hasNext}" th:href="@{/pokemon/all}">Następna</a>
     </div>
 </div>
 </body>

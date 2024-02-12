@@ -44,7 +44,7 @@ public class CollectionController {
         return "collection";
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public String collection(@RequestParam(required = false) String username, Model model){
         if(username == null){
             return "redirect:/collection/my";

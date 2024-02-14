@@ -9,10 +9,10 @@
 <div th:replace="navbar.html"></div>
 <h1 class="text-center" th:text="#{collection.title}"></h1>
 <th:block th:if="${#authentication.getName() == DTO.getUsername()}">
-    <form action="/collection/save" method="post" id="form">
+    <form class="d-flex justify-content-center align-items-center" action="/collection/save" method="post" id="form">
         <input type="hidden" name="userId" th:value="${DTO.getUserId()}" id="userId">
         <input type="hidden" name="selectedIds" value="" id="selectedIds">
-        <button id="save-button" th:text="#{collection.save}"></button>
+        <button class="btn btn-primary" id="save-button" th:text="#{collection.save}"></button>
     </form>
 </th:block>
 

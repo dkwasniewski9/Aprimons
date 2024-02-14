@@ -34,7 +34,6 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools:3.0.4'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.0'
-    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.6.3'
     testImplementation 'org.mockito:mockito-core:5.2.0'
     testImplementation 'org.springframework.security:spring-security-test:6.0.2'
     implementation 'org.apache.commons:commons-csv:1.10.0'

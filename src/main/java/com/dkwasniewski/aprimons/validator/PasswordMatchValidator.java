@@ -9,11 +9,12 @@ public class PasswordMatchValidator implements ConstraintValidator<PasswordMatch
     public void initialize(PasswordMatch constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
+
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext
             constraintValidatorContext) {
         if (value instanceof NewUserDTO dto) {
-            if(!dto.getPassword().equals(dto.getConfirmPassword())){
+            if (!dto.getPassword().equals(dto.getConfirmPassword())) {
                 constraintValidatorContext.buildConstraintViolationWithTemplate("Hasła musza być takie same")
                         .addPropertyNode("confirmPassword").addConstraintViolation();
             }

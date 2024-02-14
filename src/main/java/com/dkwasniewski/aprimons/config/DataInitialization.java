@@ -31,7 +31,7 @@ public class DataInitialization implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if(pokeballRepository.count() != 0) return;
+        if (pokeballRepository.count() != 0) return;
         try {
             importService.importDataFromCsv("src/main/resources/config/LegalityChart.csv");
         } catch (IOException e) {

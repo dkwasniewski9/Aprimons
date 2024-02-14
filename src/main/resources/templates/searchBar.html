@@ -1,6 +1,7 @@
 <form th:action="@{/collection}" method="get" class="mb-4">
     <div class="input-group">
-        <label for="username"></label><input type="text" id="username" name="username" class="form-control" th:placeholder="#{search.user}" required>
+        <label for="username"></label><input type="text" id="username" name="username" class="form-control"
+                                             th:placeholder="#{search.user}" required>
         <div class="input-group-append">
             <button type="submit" class="btn btn-primary" th:text="#{search.search}"></button>
         </div>

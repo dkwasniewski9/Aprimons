@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" xmlns:sec="http://www.w3.org/1999/xhtml">
     <div class="container-fluid">
         <a class=navbar-brand th:href="@{/}">Aprimons</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
@@ -30,7 +31,8 @@
             <div class="d-flex text-white" sec:authorize="isAnonymous()">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" th:text="#{home.notAuthenticated} + ' ' +#{login.title}" th:href="@{/login}"></a>
+                        <a class="nav-link" th:text="#{home.notAuthenticated} + ' ' +#{login.title}"
+                           th:href="@{/login}"></a>
                     </li>
                 </ul>
 

@@ -1,9 +1,9 @@
 package com.dkwasniewski.aprimons.controller;
 
-import com.dkwasniewski.aprimons.exceptions.NotActivatedException;
-import com.dkwasniewski.aprimons.exceptions.UserNotFoundException;
 import com.dkwasniewski.aprimons.dto.PokemonCollectionDTO;
 import com.dkwasniewski.aprimons.dto.SaveCollectionDTO;
+import com.dkwasniewski.aprimons.exceptions.NotActivatedException;
+import com.dkwasniewski.aprimons.exceptions.UserNotFoundException;
 import com.dkwasniewski.aprimons.model.*;
 import com.dkwasniewski.aprimons.service.PokeballService;
 import com.dkwasniewski.aprimons.service.PokemonService;
@@ -16,8 +16,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +34,12 @@ public class CollectionController {
     private PokeballService pokeballService;
     private PokemonService pokemonService;
     private MessageSource messageSource;
+
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
-    public String myCollection(Model model, HttpServletRequest request){
+    public String myCollection(Model model, HttpServletRequest request) {
         User user = userService.getCurrentUser();
-        if(!user.isActive()){
+        if (!user.isActive()) {
             throw new NotActivatedException(messageSource.getMessage("notActivated.message", null, (Locale) request.getSession().getAttribute("locale")), user);
         }
         String username = user.getUsername();
@@ -50,8 +53,8 @@ public class CollectionController {
     }
 
     @GetMapping()
-    public String collection(@RequestParam(required = false) String username, Model model, HttpServletRequest request){
-        if(username == null){
+    public String collection(@RequestParam(required = false) String username, Model model, HttpServletRequest request) {
+        if (username == null) {
             return "redirect:/collection/my";
         }
         User user = userService.findUserByUsername(username);
@@ -63,15 +66,16 @@ public class CollectionController {
         boolean editable = username.equals(SecurityContextHolder.getContext().getAuthentication().getName());
 
         model.addAttribute("DTO", new PokemonCollectionDTO(username, userId, editable,
-                                                                        pokemonService.getAllPokemon(),
-                                                                        pokeballService.getAllPokeball(),
-                                                                        userCollectionService.getUserCollection(user.getId())));
+                pokemonService.getAllPokemon(),
+                pokeballService.getAllPokeball(),
+                userCollectionService.getUserCollection(user.getId())));
 
         return "collection";
     }
+
     @PostMapping("save")
     @PreAuthorize("isAuthenticated()")
-    public String saveCollection(SaveCollectionDTO saveCollectionDTO, HttpServletRequest request){
+    public String saveCollection(SaveCollectionDTO saveCollectionDTO, HttpServletRequest request) {
         if (saveCollectionDTO.getUserId() == null || saveCollectionDTO.getSelectedIds() == null) {
             throw new IllegalArgumentException(messageSource.getMessage("request.bad", null, (Locale) request.getSession().getAttribute("locale")));
         }
@@ -85,13 +89,13 @@ public class CollectionController {
             String pokemonId = parts[0];
             String ballId = parts[1];
             boolean foundRecord = false;
-            for(OwnedPokemon pokemon : newCollection){
-                if(pokemon.getPokemonId().equals(pokemonId)){
+            for (OwnedPokemon pokemon : newCollection) {
+                if (pokemon.getPokemonId().equals(pokemonId)) {
                     pokemon.getPokeballVariantIds().add(ballId);
                     foundRecord = true;
                 }
             }
-            if(!foundRecord){
+            if (!foundRecord) {
                 List<String> balls = new ArrayList<>();
                 balls.add(ballId);
                 newCollection.add(new OwnedPokemon(pokemonId, balls));

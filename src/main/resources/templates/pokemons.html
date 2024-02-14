@@ -12,13 +12,18 @@
     <form th:action="@{/pokemon/all}" method="get">
         <label for="order">Sort by:</label>
         <select id="order" name="order">
-            <option value="dexNumber" th:selected="${allPokemonDTO.getOrder() == 'dexNumber'}" th:text="#{collection.dexNumber}"></option>
-            <option value="name" th:selected="${allPokemonDTO.getOrder() == 'name'}" th:text="#{collection.name}"></option>
+            <option value="dexNumber" th:selected="${allPokemonDTO.getOrder() == 'dexNumber'}"
+                    th:text="#{collection.dexNumber}"></option>
+            <option value="name" th:selected="${allPokemonDTO.getOrder() == 'name'}"
+                    th:text="#{collection.name}"></option>
         </select>
         <label for="direction"></label>
         <select id="direction" name="direction">
-            <option value="asc" th:selected="${allPokemonDTO.getDirection() == 'asc'}" th:text="#{direction.ascending}"></option>
-            <option value="desc" th:selected="${allPokemonDTO.getDirection() == 'desc'}" th:text="#{direction.descending}">Desc</option>
+            <option value="asc" th:selected="${allPokemonDTO.getDirection() == 'asc'}"
+                    th:text="#{direction.ascending}"></option>
+            <option value="desc" th:selected="${allPokemonDTO.getDirection() == 'desc'}"
+                    th:text="#{direction.descending}">Desc
+            </option>
         </select>
         <br>
         <label>Page size:</label>
@@ -50,11 +55,14 @@
         <tr th:each="pokemon : ${pokemons} ">
             <td class="col-1 text-center align-middle" th:text="${pokemon.getDexNumber()}"></td>
             <td class="col-1 col-md text-center align-middle" th:text="${pokemon.getName()}"></td>
-            <td class="col-1 text-center align-middle"><img class="img-fluid" th:src="@{'/images/pokemons/' + ${pokemon.getImage()}}" alt="Pokemon Image"></td>
-            <td class="col-1 text-center align-middle" th:each="pokeball : ${pokeballList}" >
-                    <img th:if="${pokemon.getPokeballs().contains(pokeball)}" th:src="@{'/images/balls/' + ${pokeball.getName()} + '.png'}">
+            <td class="col-1 text-center align-middle"><img class="img-fluid"
+                                                            th:src="@{'/images/pokemons/' + ${pokemon.getImage()}}"
+                                                            alt="Pokemon Image"></td>
+            <td class="col-1 text-center align-middle" th:each="pokeball : ${pokeballList}">
+                <img th:if="${pokemon.getPokeballs().contains(pokeball)}"
+                     th:src="@{'/images/balls/' + ${pokeball.getName()} + '.png'}">
 
-                    <img th:unless="${pokemon.getPokeballs().contains(pokeball)}" th:src="@{/images/others/cross.png}">
+                <img th:unless="${pokemon.getPokeballs().contains(pokeball)}" th:src="@{/images/others/cross.png}">
             </td>
         </tr>
         </tbody>

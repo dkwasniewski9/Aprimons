@@ -8,9 +8,9 @@
 <body>
 <div th:replace="navbar.html"></div>
 <div class="container mt-5">
-<h1 class="mb-4" th:text="#{search.searchBar}"></h1>
+    <h1 class="mb-4" th:text="#{search.searchBar}"></h1>
 
-<div th:replace="searchBar.html"></div>
+    <div th:replace="searchBar.html"></div>
     <div class="container w-50">
         <section class="mt-5">
             <h2 class="text-center mt-5" th:text="#{aprimon.intro.title}"></h2>
@@ -23,7 +23,8 @@
                 <th:block th:each="pokeball, iterStat : ${pokeballList}">
                     <li class="col-4 mb-3">
                         <div class="d-flex flex-column align-items-center">
-                            <img class="img-fluid" th:src="@{'/images/balls/' + ${pokeball.getImage()}}" alt="Pokemon Image">
+                            <img class="img-fluid" th:src="@{'/images/balls/' + ${pokeball.getImage()}}"
+                                 alt="Pokemon Image">
                             <p class="text-center" th:text="${pokeball.getName()}"></p>
                         </div>
                     </li>

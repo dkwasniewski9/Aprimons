@@ -1,6 +1,5 @@
 package com.dkwasniewski.aprimons.repository;
 
-import com.dkwasniewski.aprimons.model.Pokeball;
 import com.dkwasniewski.aprimons.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

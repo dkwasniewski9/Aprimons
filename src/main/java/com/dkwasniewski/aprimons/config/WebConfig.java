@@ -21,6 +21,7 @@ public class WebConfig implements WebMvcConfigurer {
         localeResolver.setDefaultTimeZone(TimeZone.getTimeZone("UTC+1"));
         return localeResolver;
     }
+
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         LocaleChangeInterceptor localeChangeInterceptor = new
@@ -28,6 +29,7 @@ public class WebConfig implements WebMvcConfigurer {
         localeChangeInterceptor.setParamName("lang");
         return localeChangeInterceptor;
     }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(localeChangeInterceptor());

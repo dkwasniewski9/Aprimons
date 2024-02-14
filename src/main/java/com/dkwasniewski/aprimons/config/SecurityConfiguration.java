@@ -17,7 +17,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import util.Role;
 
 import java.util.Properties;
 
@@ -36,6 +35,7 @@ public class SecurityConfiguration {
     public UserDetailsService userDetailsService() {
         return new UserService(userRepository);
     }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)
             throws Exception {
@@ -61,11 +61,13 @@ public class SecurityConfiguration {
                 );
         return http.build();
     }
+
     @Bean
-    public static PasswordEncoder passwordEncoder(){
+    public static PasswordEncoder passwordEncoder() {
 
         return new BCryptPasswordEncoder();
     }
+
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -73,6 +75,7 @@ public class SecurityConfiguration {
         provider.setPasswordEncoder(passwordEncoder());
         return provider;
     }
+
     @Bean
     public JavaMailSender mailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

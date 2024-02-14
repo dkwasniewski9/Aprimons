@@ -2,22 +2,17 @@ package com.dkwasniewski.aprimons.controller;
 
 import com.dkwasniewski.aprimons.dto.LoginUserDTO;
 import com.dkwasniewski.aprimons.dto.NewUserDTO;
-import com.dkwasniewski.aprimons.exceptions.NotActivatedException;
 import com.dkwasniewski.aprimons.model.MailToken;
 import com.dkwasniewski.aprimons.model.User;
 import com.dkwasniewski.aprimons.service.MailTokenService;
 import com.dkwasniewski.aprimons.service.PokeballService;
 import com.dkwasniewski.aprimons.service.UserService;
-import jakarta.mail.Message;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,10 +36,11 @@ public class HomeController {
     private final LocaleResolver localeResolver;
     private final PasswordEncoder passwordEncoder;
     private final MessageSource messageSource;
+
     @GetMapping("/")
     public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
         Locale currentLocale = (Locale) request.getSession().getAttribute("locale");
-        if(currentLocale == null) {
+        if (currentLocale == null) {
             Locale defaultLocale = Locale.getDefault();
             localeResolver.setLocale(request, response, defaultLocale);
             request.getSession().setAttribute("locale", defaultLocale);
@@ -52,16 +48,18 @@ public class HomeController {
         model.addAttribute(pokeballService.getAllPokeball());
         return "index";
     }
+
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("loginUserDTO", new LoginUserDTO());
         return "login";
     }
+
     @GetMapping("/language")
     public String changeLanguage(HttpServletRequest request, HttpServletResponse response) {
         Locale currentLocale = (Locale) request.getSession().getAttribute("locale");
         Locale newLocale;
-        if(currentLocale == null || currentLocale.getLanguage().equals(Locale.ENGLISH.getLanguage())) {
+        if (currentLocale == null || currentLocale.getLanguage().equals(Locale.ENGLISH.getLanguage())) {
             newLocale = Locale.forLanguageTag("pl");
         } else {
             newLocale = Locale.ENGLISH;
@@ -70,6 +68,7 @@ public class HomeController {
         request.getSession().setAttribute("locale", newLocale);
         return "redirect:" + request.getHeader("referer");
     }
+
     /*@PostMapping("/login")
     public String postLogin(LoginUserDTO loginUserDTO){
             User user = userService.findUserByUsername(loginUserDTO.getUsername());
@@ -94,12 +93,13 @@ public class HomeController {
         model.addAttribute("newUserDTO", new NewUserDTO());
         return "register";
     }
+
     @PostMapping("/register")
-    public String registerPost(@Valid NewUserDTO newUserDTO, BindingResult bindingResult, Model model){
+    public String registerPost(@Valid NewUserDTO newUserDTO, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "register";
         }
-        if(userService.findUserByUsername(newUserDTO.getUsername()) != null){
+        if (userService.findUserByUsername(newUserDTO.getUsername()) != null) {
             model.addAttribute("UserExists", true);
             return "register";
         }
@@ -111,10 +111,11 @@ public class HomeController {
         mailTokenService.sendConfirmationMail(user);
         return "redirect:/login";
     }
+
     @GetMapping("/confirm")
-    public String confirm(@RequestParam String token, Model model, HttpServletRequest request){
+    public String confirm(@RequestParam String token, Model model, HttpServletRequest request) {
         MailToken mailToken = mailTokenService.findByUUID(token);
-        if(mailToken.getExpiringDate().isAfter(LocalDateTime.now())){
+        if (mailToken.getExpiringDate().isAfter(LocalDateTime.now())) {
             mailTokenService.confirmUser(mailToken);
             User user = mailToken.getUser();
             userService.activateUser(user);

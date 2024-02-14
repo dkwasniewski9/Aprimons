@@ -11,18 +11,19 @@
     <label th:if="${failed}" class="alert alert-danger" th:text="#{login.badCredencials}"></label>
     <div class="mb-3">
         <label for="username" class="form-label" th:text="#{login.username}"></label>
-        <input type="text" class="form-control" id="username" th:field="*{username}" autofocus="autofocus" />
+        <input type="text" class="form-control" id="username" th:field="*{username}" autofocus="autofocus"/>
     </div>
     <div class="mb-3">
         <label for="password" class="form-label" th:text="#{login.password}"></label>
-        <input type="password" class="form-control" id="password" th:field="*{password}" />
+        <input type="password" class="form-control" id="password" th:field="*{password}"/>
     </div>
     <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="remember" name="remember-me">
         <label class="form-check-label" for="remember" th:text="#{login.remember}"></label>
     </div>
     <button type="submit" class="btn btn-primary btn-block w-100" th:text="#{login.submit}"></button>
-    <a th:href="@{/register}" class="btn btn-secondary btn-block w-100 mt-2" role="button" th:text="#{login.register}"></a>
+    <a th:href="@{/register}" class="btn btn-secondary btn-block w-100 mt-2" role="button"
+       th:text="#{login.register}"></a>
 </form>
 </body>
 </html>

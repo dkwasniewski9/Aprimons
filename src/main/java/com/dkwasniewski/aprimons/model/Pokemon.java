@@ -21,6 +21,7 @@ public class Pokemon {
 
     @DBRef
     private List<Pokeball> pokeballs;
+
     public Pokemon(int dexNumber, String name, String image) {
         this.dexNumber = dexNumber;
         this.name = name;

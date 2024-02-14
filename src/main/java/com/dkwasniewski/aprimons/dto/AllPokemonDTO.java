@@ -11,7 +11,8 @@ public class AllPokemonDTO {
     int size;
     String order;
     String direction;
-    public AllPokemonDTO(){
+
+    public AllPokemonDTO() {
         page = 0;
         size = 20;
         order = "dexNumber";

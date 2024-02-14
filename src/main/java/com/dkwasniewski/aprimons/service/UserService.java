@@ -8,18 +8,21 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
 public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
-    public void saveUser(User user){
+
+    public void saveUser(User user) {
         userRepository.save(user);
     }
 
-    public User findUserByUsername(String name) { return userRepository.findUserByUsername(name); }
+    public User findUserByUsername(String name) {
+        return userRepository.findUserByUsername(name);
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User userEntity = userRepository.findUserByUsername(username);
@@ -31,12 +34,12 @@ public class UserService implements UserDetailsService {
                 .build();
     }
 
-    public User getCurrentUser(){
+    public User getCurrentUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return userRepository.findUserByUsername(authentication.getName());
     }
 
-    public void activateUser(User user){
+    public void activateUser(User user) {
         user.setActive(true);
         userRepository.save(user);
     }

@@ -1,11 +1,8 @@
 package com.dkwasniewski.aprimons.service;
 
-import com.dkwasniewski.aprimons.model.Pokemon;
 import com.dkwasniewski.aprimons.model.UserCollection;
-import com.dkwasniewski.aprimons.repository.PokemonRepository;
 import com.dkwasniewski.aprimons.repository.UserCollectionRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -13,15 +10,16 @@ import org.springframework.util.ObjectUtils;
 @AllArgsConstructor
 public class UserCollectionService {
     private UserCollectionRepository userCollectionRepository;
-    public void saveUserCollection(UserCollection userCollection){
+
+    public void saveUserCollection(UserCollection userCollection) {
         userCollectionRepository.save(userCollection);
     }
 
-    public UserCollection getUserCollection(String userId){
+    public UserCollection getUserCollection(String userId) {
         UserCollection userCollection = userCollectionRepository.getUserCollectionByUserId(userId);
-        if(ObjectUtils.isEmpty(userCollection)){
+        if (ObjectUtils.isEmpty(userCollection)) {
 
-            userCollection =  userCollectionRepository.save(new UserCollection(userId));
+            userCollection = userCollectionRepository.save(new UserCollection(userId));
         }
         return userCollection;
     }

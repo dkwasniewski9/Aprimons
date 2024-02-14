@@ -2,17 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All Pokemons</title>
+    <title th:text="#{collection.title}"></title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
 <body>
 <div th:replace="navbar.html"></div>
-<h1 class="text-center">Your pokemons</h1>
+<h1 class="text-center" th:text="#{collection.title}"></h1>
 <th:block th:if="${#authentication.getName() == DTO.getUsername()}">
     <form action="/collection/save" method="post" id="form" >
         <input type="hidden" name="userId" th:value="${DTO.getUserId()}" id="userId">
         <input type="hidden" name="selectedIds" value="" id="selectedIds">
-        <button id="save-button" th:text="save"></button>
+        <button id="save-button" th:text="#{collection.save}"></button>
     </form>
 </th:block>
 
@@ -20,9 +20,9 @@
     <table class="table table-bordered table-striped text-center ">
         <thead class="table-dark align-middle">
         <tr>
-            <th>Dex Number</th>
-            <th>Name</th>
-            <th>Image</th>
+            <th th:text="#{collection.dexNumber}"></th>
+            <th th:text="#{collection.name}"></th>
+            <th th:text="#{collection.image}"></th>
             <th th:each="pokeball : ${DTO.getPokeballList()}" th:text="${pokeball.getName()}"></th>
         </tr>
         </thead>

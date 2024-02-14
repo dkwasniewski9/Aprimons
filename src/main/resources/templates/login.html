@@ -7,14 +7,15 @@
 <body>
 <div th:replace="navbar.html"></div>
 <h1 class="display-4 text-center mb-4 p-4" th:text="#{login.title }"></h1>
-<form th:action="@{/login}" method="post" class="mx-auto w-25 p4">
+<form action="/login" method="post" class="mx-auto w-25 p4" th:object="${loginUserDTO}">
+    <label th:if="${failed}" class="alert alert-danger" th:text="#{login.badCredencials}"></label>
     <div class="mb-3">
         <label for="username" class="form-label" th:text="#{login.username}"></label>
-        <input type="text" class="form-control" id="username" name="username" autofocus="autofocus" />
+        <input type="text" class="form-control" id="username" th:field="*{username}" autofocus="autofocus" />
     </div>
     <div class="mb-3">
         <label for="password" class="form-label" th:text="#{login.password}"></label>
-        <input type="password" class="form-control" id="password" name="password" />
+        <input type="password" class="form-control" id="password" th:field="*{password}" />
     </div>
     <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="remember" name="remember-me">

@@ -2,23 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All Pokemons</title>
+    <title th:text="#{navbar.pokemons}"></title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
 <body>
 <div th:replace="navbar.html"></div>
-<h1 class="text-center">All Pokemons</h1>
+<h1 class="text-center" th:text="#{navbar.pokemons}"></h1>
 <div class="container">
     <form th:action="@{/pokemon/all}" method="get">
         <label for="order">Sort by:</label>
         <select id="order" name="order">
-            <option value="dexNumber" th:selected="${allPokemonDTO.getOrder() == 'dexNumber'}" th:text="DexNumber"></option>
-            <option value="name" th:selected="${allPokemonDTO.getOrder() == 'name'}" th:text="Name"></option>
+            <option value="dexNumber" th:selected="${allPokemonDTO.getOrder() == 'dexNumber'}" th:text="#{collection.dexNumber}"></option>
+            <option value="name" th:selected="${allPokemonDTO.getOrder() == 'name'}" th:text="#{collection.name}"></option>
         </select>
         <label for="direction"></label>
         <select id="direction" name="direction">
-            <option value="asc" th:selected="${allPokemonDTO.getDirection() == 'asc'}">Asc</option>
-            <option value="desc" th:selected="${allPokemonDTO.getDirection() == 'desc'}">Desc</option>
+            <option value="asc" th:selected="${allPokemonDTO.getDirection() == 'asc'}" th:text="#{direction.ascending}"></option>
+            <option value="desc" th:selected="${allPokemonDTO.getDirection() == 'desc'}" th:text="#{direction.descending}">Desc</option>
         </select>
         <br>
         <label>Page size:</label>
@@ -33,16 +33,16 @@
                 <input type="radio" name="size" value="100" th:checked="${allPokemonDTO.getSize() == 100}"> 100
             </label>
         </div>
-        <button type="submit">Refresh</button>
+        <button type="submit" th:text="#{sort.submit}"></button>
     </form>
 
 
     <table class="table table-bordered table-striped text-center ">
         <thead class="table-dark align-middle">
         <tr>
-            <th>Dex Number</th>
-            <th>Name</th>
-            <th>Image</th>
+            <th th:text="#{collection.dexNumber}"></th>
+            <th th:text="#{collection.name}"></th>
+            <th th:text="#{collection.image}"></th>
             <th th:each="pokeball : ${pokeballList}" th:text="${pokeball.getName()}"></th>
         </tr>
         </thead>
@@ -60,14 +60,14 @@
         </tbody>
     </table>
     <div>
-        <span>Strona:</span>
+        <span th:text="#{paging.page}"></span>
         <span th:text="${pokemons.number + 1}"></span>
         <span>z</span>
         <span th:text="${pokemons.totalPages}"></span>
     </div>
     <div>
-        <a th:if="${pokemons.hasPrevious}" th:href="@{/pokemon/all}">Poprzednia</a>
-        <a th:if="${pokemons.hasNext}" th:href="@{/pokemon/all}">Następna</a>
+        <a th:if="${pokemons.hasPrevious}" th:href="@{/pokemon/all}" th:text="#{paging.previous}"></a>
+        <a th:if="${pokemons.hasNext}" th:href="@{/pokemon/all}" th:text="#{paging.next}"></a>
     </div>
 </div>
 </body>

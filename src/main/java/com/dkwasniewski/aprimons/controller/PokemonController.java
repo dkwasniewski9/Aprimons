@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,13 +26,11 @@ public class PokemonController {
     private final PokemonService pokemonService;
     private final PokeballService pokeballService;
 
+
+    @PreAuthorize("isAuthenticated()")
     @GetMapping("all")
-    public String AllPokemons(@Valid AllPokemonDTO allPokemonDTO,
-                              BindingResult bindingResult,
+    public String AllPokemons(AllPokemonDTO allPokemonDTO,
                               Model model) {
-        if (bindingResult.hasErrors()) {
-            return "redirect:/error";
-        }
         PageRequest pageRequest = PageRequest.of(allPokemonDTO.getPage(), allPokemonDTO.getSize(), Sort.Direction.fromString(allPokemonDTO.getDirection()), allPokemonDTO.getOrder());
         Page<Pokemon> pokemons = pokemonService.getAllPokemonPages(pageRequest);
         model.addAttribute("pokemons", pokemons);

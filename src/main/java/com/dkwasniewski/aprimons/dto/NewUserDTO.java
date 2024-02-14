@@ -2,7 +2,7 @@ package com.dkwasniewski.aprimons.dto;
 
 import com.dkwasniewski.aprimons.validator.PasswordMatch;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -10,14 +10,13 @@ import lombok.Data;
 @Data
 @PasswordMatch
 public class NewUserDTO {
-    @NotNull
-    @Size(min = 6)
+    @NotBlank
     private String username;
-    @NotNull
+    @NotBlank
     @Email
     private String email;
-    @NotNull
+    @NotBlank
     private String password;
-    @NotNull
+    @NotBlank
     private String confirmPassword;
 }

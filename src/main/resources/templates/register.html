@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Formularz Rejestracji</title>
+    <title th:text="#{register.title}"></title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
 <body>
@@ -10,34 +10,46 @@
 <h1 class="display-4 text-center mb-4 p-4" th:text="#{register.title}"></h1>
 
 <form action="/register" method="post" th:object="${newUserDTO}" class="mx-auto w-25 p-4">
-    <input type="hidden" name="${_csrf.parameterName}"
-           value="${_csrf.token}"/>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <label th:if="${UserExists}" class="alert alert-danger">User Exists</label>
 
     <div class="mb-3">
-        <label th:for="username" class="form-label">Nazwa użytkownika:</label>
-        <input type="text" th:field="*{username}" class="form-control" >
+        <label th:for="username" class="form-label" th:text="#{register.username}"></label>
+        <input type="text" th:field="*{username}" class="form-control"/>
+        <div th:if="${#fields.hasErrors('username')}" class="alert alert-danger">
+            <span th:each="error : ${#fields.errors('username')}" th:text="${error}"></span>
+        </div>
     </div>
     <br>
 
     <div class="mb-3">
-        <label th:for="email" class="form-label">Adres e-mail:</label>
-        <input type="text" th:field="*{email}" class="form-control" >
+        <label th:for="email" class="form-label" th:text="#{register.email}"></label>
+        <input type="text" th:field="*{email}" class="form-control"/>
+        <div th:if="${#fields.hasErrors('email')}" class="alert alert-danger">
+            <span th:each="error : ${#fields.errors('email')}" th:text="${error}"></span>
+        </div>
     </div>
     <br>
 
     <div class="mb-3">
-        <label th:for="password" class="form-label">Hasło:</label>
-        <input class="form-control" th:field="*{password}" type="password">
+        <label th:for="password" class="form-label" th:text="#{register.password}"></label>
+        <input class="form-control" th:field="*{password}" type="password"/>
+        <div th:if="${#fields.hasErrors('password')}" class="alert alert-danger">
+            <span th:each="error : ${#fields.errors('password')}" th:text="${error}"></span>
+        </div>
     </div>
     <br>
 
     <div class="mb-3">
-        <label th:for="confirmPassword" class="form-label">Potwierdź hasło:</label>
-        <input type="password" th:field="*{confirmPassword}" class="form-control" >
+        <label th:for="confirmPassword" class="form-label" th:text="#{register.confirmPassword}"></label>
+        <input type="password" th:field="*{confirmPassword}" class="form-control"/>
+        <div th:if="${#fields.hasErrors('confirmPassword')}" class="alert alert-danger">
+            <span th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}"></span>
+        </div>
     </div>
     <br>
 
-    <button type="submit" class="btn btn-primary btn-block w-100">Zarejestruj</button>
+    <button type="submit" class="btn btn-primary btn-block w-100" th:text="#{register.submit}"></button>
 </form>
 
 </body>

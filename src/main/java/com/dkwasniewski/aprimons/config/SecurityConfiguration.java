@@ -52,7 +52,13 @@ public class SecurityConfiguration {
                                 .loginProcessingUrl("/login")
                 )
                 .rememberMe(remember -> remember.userDetailsService(userDetailsService()))
-                .httpBasic(Customizer.withDefaults());
+                .httpBasic(Customizer.withDefaults())
+                .logout((logout) ->
+                        logout
+                                .invalidateHttpSession(false)
+                                .logoutUrl("/logout")
+                                .logoutSuccessUrl("/")
+                );
         return http.build();
     }
     @Bean

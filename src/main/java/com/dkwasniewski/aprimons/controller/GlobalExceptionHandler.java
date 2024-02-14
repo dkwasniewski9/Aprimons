@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
     public String handleNotAdctivatedException(NotActivatedException ex, Model model, HttpServletRequest request) {
         model.addAttribute("message", ex.getMessage());
         mailTokenService.sendConfirmationMail(ex.getUser());
-        model.addAttribute("mailedTo", messageSource.getMessage("mail.sentAgain", null, (Locale) request.getSession().getAttribute("locale")) + ex.getUser().getEmail());
+        model.addAttribute("mailedTo", messageSource.getMessage("mail.sentAgain", null, (Locale) request.getSession().getAttribute("locale")) + ' ' + ex.getUser().getEmail());
         return "confirm";
     }
 }

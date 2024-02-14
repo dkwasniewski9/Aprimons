@@ -11,6 +11,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -19,7 +20,6 @@ public class MailTokenService {
 
     private final JavaMailSender mailSender;
     private final MessageSource messageSource;
-    private final UserService userService;
 
     public void save(MailToken mailToken) {
         mailTokenRepository.save(mailToken);
@@ -31,7 +31,7 @@ public class MailTokenService {
 
 
     public void sendConfirmationMail(User user) {
-        MailToken mailToken = new MailToken("exampleUUID", LocalDateTime.now(), LocalDateTime.now().plusMinutes(30), true, user);
+        MailToken mailToken = new MailToken(UUID.randomUUID().toString(), LocalDateTime.now(), LocalDateTime.now().plusMinutes(30), true, user);
         mailTokenRepository.save(mailToken);
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(user.getEmail());

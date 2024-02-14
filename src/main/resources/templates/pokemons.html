@@ -9,8 +9,8 @@
 <div th:replace="navbar.html"></div>
 <h1 class="text-center" th:text="#{navbar.pokemons}"></h1>
 <div class="container">
-    <form th:action="@{/pokemon/all}" method="get">
-        <label for="order">Sort by:</label>
+    <form th:action="@{/pokemon/all}" method="get" id="form">
+        <label for="order" th:text="#{sort.sortBy}"></label>
         <select id="order" name="order">
             <option value="dexNumber" th:selected="${allPokemonDTO.getOrder() == 'dexNumber'}"
                     th:text="#{collection.dexNumber}"></option>
@@ -26,7 +26,7 @@
             </option>
         </select>
         <br>
-        <label>Page size:</label>
+        <label th:text="#{sort.pageSize}"></label>
         <div class="btn-group">
             <label class="btn btn-secondary">
                 <input type="radio" name="size" value="20" th:checked="${allPokemonDTO.getSize() == 20}"> 20
@@ -38,8 +38,8 @@
                 <input type="radio" name="size" value="100" th:checked="${allPokemonDTO.getSize() == 100}"> 100
             </label>
         </div>
-        <button type="submit" th:text="#{sort.submit}"></button>
-    </form>
+        <input type="hidden" id="page" name="page" th:value="${allPokemonDTO.getPage()}" />
+        <button class="btn btn-primary" onclick="sort()" th:text="#{sort.submit}"></button>
 
 
     <table class="table table-bordered table-striped text-center ">
@@ -70,13 +70,32 @@
     <div>
         <span th:text="#{paging.page}"></span>
         <span th:text="${pokemons.number + 1}"></span>
-        <span>z</span>
+        <span>:</span>
         <span th:text="${pokemons.totalPages}"></span>
     </div>
     <div>
-        <a th:if="${pokemons.hasPrevious}" th:href="@{/pokemon/all}" th:text="#{paging.previous}"></a>
-        <a th:if="${pokemons.hasNext}" th:href="@{/pokemon/all}" th:text="#{paging.next}"></a>
+        <button class="btn btn-primary" onclick="previousPage()" th:if="${pokemons.hasPrevious}" th:text="#{paging.previous}"></button>
+        <button class="btn btn-primary" onclick="nextPage()" th:if="${pokemons.hasNext}" th:text="#{paging.next}"></button>
     </div>
+    </form>
 </div>
 </body>
 </html>
+
+<script>
+    function previousPage() {
+        const currentPage = parseInt(document.getElementById("page").value);
+        document.getElementById("page").value = currentPage - 1;
+        document.getElementById("form").submit();
+    }
+
+    function nextPage() {
+        const currentPage = parseInt(document.getElementById("page").value);
+        document.getElementById("page").value = currentPage + 1;
+        document.getElementById("form").submit();
+    }
+    function sort(){
+        document.getElementById("page").value = 0;
+        document.getElementById("form").submit();
+    }
+</script>

@@ -30,11 +30,5 @@ Viewing the progress of other users
 Tests
 The project includes unit tests for services using JUnit and Mockito. To run the tests, execute the command gradle test.
 
-Contributing
-Currently, I am not accepting contributions to this project.
-
-License
-This project was created as an assignment for the Java Programming II course. The license has not been specified.
-
 Contact
 If you have any questions, please contact me at: dkwasniewski1999@gmail.com
